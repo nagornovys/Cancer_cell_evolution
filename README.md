@@ -11,6 +11,8 @@ The directory has several files:
 
 	•	CancerProgress_Final_Version.R - the R script for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The script allows to make repeating simulation/replicas to get statistical data. 
 	
+	•	Report.pdf - the file with a plots and graphs of results of simulations for three cases. 
+	
 	•	Analyze_of_clones.R - the R script to analize the calculation data. The analyzing script allows to calculate next dependences: an evolution of the cell’s number for the normal and mutated cells, an evolution of the Hallmarks and the probabilities, a number of the cells in clones vs clone’s ID (for drivers and for all genes), a number of clones vs the replica’s ID (for drivers and for all genes and the relations between them) and it’s distribution, a histogram for the inequalities coefficients for drivers and for all genes, the distribution of the variant allele function and the order of the gene’s dysfunction.
 	
 	•	Functions.R - script to calculate the functions for Analyze_of_clones.R, so please run it first. 
