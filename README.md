@@ -17,7 +17,7 @@ The directory has several files:
 	
 	•	Functions.R - script to calculate the functions for Analyze_of_clones.R, so please run it first. 
 		
-	•	We add some examples of the simulation results for the dummy cases and for a more realistic case as colorectal cancer:
+	•	The examples of the simulation results for the dummy cases and for a more realistic case as colorectal cancer:
         
 	    ◦	single.zip - example of simulation for simplest dependence of Hallmark on genes: one gene - one Hallmarks.
 	    ◦	multi.zip - example of simulation for complex dependence of Hallmark on genes.
