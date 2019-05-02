@@ -8,8 +8,7 @@ The directory has several files:
 	•	Tests.zip - archive with tests for program code. Each test is in the separate directory and has a note with explanation of details of test. Some tests need to change a code a bit, you can find information about change in the note and also in the code, for this, please, find word "test".
     
 	•	presentation_of_tests.pdf - presentation file with results of all tests. You can find all tests and results in a brief manner.
-
-	•	CancerProgress_Final_Version.R - the R script for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The script allows to make repeating simulation/replicas to get statistical data. 
+	•	CancerProgress_Final_Version.zip - the R script for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The script allows to make repeating simulation/replicas to get statistical data. 
 	
 	•	Report.pdf - the file with a plots and graphs of results of simulations for three cases. 
 	
