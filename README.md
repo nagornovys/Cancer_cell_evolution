@@ -23,4 +23,4 @@ The script allows to make repeating simulation/replicas to get statistical data:
 	
 	•	Report.pdf - the file with a plots and graphs of results of simulations for colorectal cancer. 
 
-	•	last_step.txt.ab and - the file
+	•	last_step.txt.aa.zip and last_step.txt.ab.zip - the two parties (zip arhive) of the file "last_step.txt", which includes of the data for the last step of the one hundred simulations. 
