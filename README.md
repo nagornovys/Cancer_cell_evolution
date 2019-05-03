@@ -22,3 +22,5 @@ The script allows to make repeating simulation/replicas to get statistical data:
 	•	REPEAT.zip - zip arhive with the script to calculate			
 	
 	•	Report.pdf - the file with a plots and graphs of results of simulations for colorectal cancer. 
+
+	•	last_step.txt.ab and - the file
