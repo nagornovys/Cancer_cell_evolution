@@ -12,9 +12,8 @@ The directory has several files:
 	
 The zip arhives of simulations include the R scrips to analize the results of the simulations:
 	
-	•	Analyze_of_clones.R (or Dyversity of clones.R) - the R script to analize the calculation data, please, run it after Functions.R (ineq.R + Analyze.R). The analyzing script allows to calculate next dependences: an evolution of the cell’s number for the normal and mutated cells, an evolution of the Hallmarks and the probabilities, a number of the cells in clones vs clone’s ID (for drivers and for all genes), a number of clones vs the replica’s ID (for drivers and for all genes and the relations between them) and it’s distribution, a histogram for the inequalities coefficients for drivers and for all genes, and the order of the gene’s dysfunction.
-	
 	•	Functions.R (ineq.R + Analyze.R) - script/scripts to calculate the functions for Analyze_of_clones.R (or Dyversity of clones.R), so please run it first. 
+	•	Analyze_of_clones.R (or Dyversity of clones.R) - the R script to analize the calculation data, please, run it after Functions.R (ineq.R + Analyze.R). The analyzing script allows to calculate next dependences: an evolution of the cell’s number for the normal and mutated cells, an evolution of the Hallmarks and the probabilities, a number of the cells in clones vs clone’s ID (for drivers and for all genes), a number of clones vs the replica’s ID (for drivers and for all genes and the relations between them) and it’s distribution, a histogram for the inequalities coefficients for drivers and for all genes, and the order of the gene’s dysfunction.
 	
 	
 The script allows to make repeating simulation/replicas to get statistical data:
