@@ -1,6 +1,6 @@
 Title: "tugHall: a simulator of cancer cell evolution based on the hallmarks of cancer, linked to the mutational states of tumor-related genes"
 
-Authors: Iurii Nagornov, Mamoru Kato, Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo
+Authors: Iurii Nagornov, Mamoru Kato, Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan
 
 This is a script in R to simulate the cancer cell evolution in the framework of Hallmarks model proposed by Mamoru Kato (Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
 
