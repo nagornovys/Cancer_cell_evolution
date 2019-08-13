@@ -32,30 +32,28 @@ Short description
 ---
 The flood of recent cancer genomic data requires a coherent model that can sort out the findings to systematically explain clonal evolution and the resultant intra-tumor heterogeneity (ITH). Here, we present a new mathematical model designed to computationally simulate the evolution of cancer cells. The model connects the well-known hallmarks of cancer with the specific mutational states of tumor-related genes. The cell behavior phenotypes are stochastically determined and the hallmarks probabilistically interfere with the phenotypic probabilities. In turn, the hallmark variables depend on the mutational states of tumor-related genes. Thus, our software can deepen our understanding of cancer-cell evolution and generation of ITH.
 
-###File List
+Content of package
+---
+### File List
 
 * _Tests.zip_ - archive with tests for program code. Each test is in the separate directory and has a note with explanation of details of test. Some tests need to change a code a bit, you can find information about change in the note and also in the code, for this, please, find word "test".
 * _presentation_of_tests.pdf_ - presentation file with results of all tests. You can find all tests and results in a brief manner.
 * _Colorectal_cancer.zip_ - the zip-arhive with R script and input files for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The set of genes is included for colorectal cancer as a example. Please, to change the genes - Hallmarks relations to another simulation. 
 
-Script to simulate
----
+### Script to simulate
 * _CancerProgress_Final_Version.R_ - the script to simulate cell evolution.
 
-Input files
----
+### Input files
 * _gene_cds2.txt_ - the information about _Names of genes_, _length of CDS_ (CoDing Sequence - the coding region of a gene), _relation to hallmarks_, _oncogene or suppressor_ (o or s) and _relative weights for hallmarks_.
 * _cellinit.txt_ - the list of _initial cells_ with _ID_ with a _list of mutated genes_. 
 
-Output files
----
+### Output files
 * _log.txt_ - the file with information about input parameters and names of input files.
 * _geneout.txt_ - the file with information about _Names of genes_, _length of CDS_, _relation to hallmarks_, _oncogene or suppressor_ and _real weights for hallmarks_, which are used in the simulation.
 * _Order_of_gene_disfunction.txt_ - the file with information of order of gene disfunction for clones at last time step.
 * _geneout.txt_ - the file with **all** output data during the simulation for each time step.
 
-Scripts to analyse the output file
----
+### Scripts to analyse the output file
 The zip arhives of simulations include the R scrips to analize the results of the simulations:
 * Functions.R (_ineq.R_ + _Analyze.R_) - script/scripts to calculate the functions for Analyze_of_clones.R (or Dyversity of clones.R), so please run it first.
 * _Analyze_of_clones.R_ (or _Dyversity_of_clones.R_) - the R script to analize the calculation data, please, run it after Functions.R (_ineq.R_ + _Analyze.R_). The analyzing script allows to calculate next dependences: an evolution of the cell’s number for the normal and mutated cells, an evolution of the Hallmarks and the probabilities, a number of the cells in clones vs clone’s ID (for drivers and for all genes), a number of clones vs the replica’s ID (for drivers and for all genes and the relations between them) and it’s distribution, a histogram for the inequalities coefficients for drivers and for all genes, and the order of the gene’s dysfunction.
