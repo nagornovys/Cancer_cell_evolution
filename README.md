@@ -1,6 +1,6 @@
 tugHall
 ====================
-**tugHall** ** (*tu*mor *g*ene-*Hall*mark) ** is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
+**tugHall** **(*tu*mor *g*ene-*Hall*mark)** is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
 
 This is a script in R to simulate the cancer cell evolution in the framework of the model proposed by *prof. Mamoru Kato* 
 (Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
