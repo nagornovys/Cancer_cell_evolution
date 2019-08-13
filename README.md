@@ -32,8 +32,7 @@ Short description
 ---
 The flood of recent cancer genomic data requires a coherent model that can sort out the findings to systematically explain clonal evolution and the resultant intra-tumor heterogeneity (ITH). Here, we present a new mathematical model designed to computationally simulate the evolution of cancer cells. The model connects the well-known hallmarks of cancer with the specific mutational states of tumor-related genes. The cell behavior phenotypes are stochastically determined and the hallmarks probabilistically interfere with the phenotypic probabilities. In turn, the hallmark variables depend on the mutational states of tumor-related genes. Thus, our software can deepen our understanding of cancer-cell evolution and generation of ITH.
 
-File List
----
+###File List
 
 * _Tests.zip_ - archive with tests for program code. Each test is in the separate directory and has a note with explanation of details of test. Some tests need to change a code a bit, you can find information about change in the note and also in the code, for this, please, find word "test".
 * _presentation_of_tests.pdf_ - presentation file with results of all tests. You can find all tests and results in a brief manner.
@@ -67,3 +66,11 @@ The script allows to make repeating simulation/replicas to get statistical data:
 * _REPEAT.zip_ - zip arhive with the script to calculate
 * _Results of simulation.pdf_ - the file with a plots and graphs of results of simulations for colorectal cancer, for one simulation and for one hundred simulations.
 * _ast_step.txt.aa.zip_ and _last_step.txt.ab.zip_ - the two parties (zip arhive) of the file "_last_step.txt_", which includes of them both.
+
+Funding
+---
+This work was supported by CREST-JST (14531766); MEXT (15K06916); and AMED (16ck0106013h0003).
+
+Acknowledgements
+---
+We thank Asmaa Elzawahry, Yusuke Suenaga, Sana Yokoi, Yoshitaka Hippo, Atsushi Niida, and Daniel A. Vasco for useful suggestions.
