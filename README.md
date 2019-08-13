@@ -3,7 +3,7 @@ tugHall
 
 **tugHall** _(**tu**mor **g**ene-**Hall**mark)_ is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
 
-This is a script in R to simulate the cancer cell evolution in the framework of the model proposed by _**prof. Mamoru Kato**_, 
+This is a script in _**R**_ to simulate the cancer cell evolution in the framework of the model proposed by _**prof. Mamoru Kato**_, 
 _Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN_.
 
 Authors and contributor list: 
@@ -38,7 +38,7 @@ Content of package
 
 * _Tests.zip_ - archive with tests for program code. Each test is in the separate directory and has a note with explanation of details of test. Some tests need to change a code a bit, you can find information about change in the note and also in the code, for this, please, find word "test".
 * _presentation_of_tests.pdf_ - presentation file with results of all tests. You can find all tests and results in a brief manner.
-* _Colorectal_cancer.zip_ - the zip-arhive with R script and input files for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The set of genes is included for colorectal cancer as a example. Please, to change the genes - Hallmarks relations to another simulation. 
+* _Colorectal_cancer.zip_ - the zip-arhive with R script and input files for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The set of genes is included for colorectal cancer as a example. Please, to change the genes - Hallmarks relations to another simulation.
 
 #### Script to simulate
 * _CancerProgress_Final_Version.R_ - the script to simulate cell evolution.
@@ -63,6 +63,17 @@ The script allows to make repeating simulation/replicas to get statistical data:
 * _REPEAT.zip_ - zip arhive with the script to calculate
 * _Results of simulation.pdf_ - the file with a plots and graphs of results of simulations for colorectal cancer, for one simulation and for one hundred simulations.
 * _ast_step.txt.aa.zip_ and _last_step.txt.ab.zip_ - the two parties (zip arhive) of the file "_last_step.txt_", which includes of them both.
+
+How to RUN the simulation
+--
+In order to make the simulation, please, follow next procedure:
+
+1. Open the script _CancerProgress_Final_Version.R_ in R Stiduo, for example.
+2. To check or/and change the parameters of simulation in the end of file and in the input files.
+3. Run the simulation using _"model()"_ function. 
+4. To see data, please, see _cellout.txt_ file. 
+5. To analize results of simulation, please, use _ineq.R_ and _Analyze.R_ scripts.
+
 
 Funding
 ---
