@@ -2,19 +2,6 @@ tugHall
 ====================
 tugHall: a simulator of cancer cell evolution based on the hallmarks of cancer, linked to the mutational states of tumor-related genes
 
-Short description
----
-This is a script in R to simulate the cancer cell evolution in the framework of Hallmarks model proposed by Mamoru Kato (Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
-
-Licence Information
-------
-GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007 (READ LICENSE)
-
-Project source can be downloaded from websites  
---- 
-https://github.com/nagornovys/Cancer_cell_evolution  -  developed resource
-https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an archive
-
 Authors and contributor list: 
 --- 
 **Iurii Nagornov** 
@@ -26,6 +13,21 @@ Department of Bioinformatics, Research Institute, National Cancer Center Japan, 
 All other known bugs and fixes can be sent to inagonov@ncc.go.jp
 
 Reported bugs/fixes will be submitted to correction.
+
+Licence Information
+------
+GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007 (READ LICENSE)
+
+Project source can be downloaded from websites  
+--- 
+https://github.com/nagornovys/Cancer_cell_evolution  -  developed resource
+https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an archive
+
+Short description
+---
+This is a script in R to simulate the cancer cell evolution in the framework of Hallmarks model proposed by Mamoru Kato (Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
+**tugHall (tumor gene-Hallmark)** simulator, of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
+The flood of recent cancer genomic data requires a coherent model that can sort out the findings to systematically explain clonal evolution and the resultant intra-tumor heterogeneity (ITH). Here, we present a new mathematical model designed to computationally simulate the evolution of cancer cells. The model connects the well-known hallmarks of cancer with the specific mutational states of tumor-related genes. The cell behavior phenotypes are stochastically determined and the hallmarks probabilistically interfere with the phenotypic probabilities. In turn, the hallmark variables depend on the mutational states of tumor-related genes. Thus, our software can deepen our understanding of cancer-cell evolution and generation of ITH.
 
 File List
 ---
