@@ -44,7 +44,7 @@ Script to simulate
 Input files
 ---
 * gene_cds2.txt - the information about _Names of genes_, _length of CDS_ (CoDing Sequence - the coding region of a gene), _relation to hallmarks_, _oncogene or suppressor_ (o or s) and _relative weights for hallmarks_.
-* cellinit.txt - 
+* cellinit.txt - the list of _initial cells_ with _ID_, _list of destroied genes_. 
 
 Output files
 ---
