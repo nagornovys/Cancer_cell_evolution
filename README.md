@@ -4,13 +4,25 @@ tugHall
 Licence Information: READ LICENSE
 ------
 
-Project source can be downloaded from website https://github.com/nagornovys/Cancer_cell_evolution 
-
-
+Project source can be downloaded from website 
+https://github.com/nagornovys/Cancer_cell_evolution 
 --- 
 
+Authors and contributor list: 
+--- 
+
+All other known bugs and fixes can be sent to inagonov@ncc.go.jp
+
+Reported bugs/fixes will be submitted to correction.
+
+File List
+---
+``` 
 
 
+
+
+```
 
 
 
