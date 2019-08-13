@@ -1,3 +1,24 @@
+tugHall
+====================
+
+Licence Information: READ LICENSE
+------
+
+Project source can be downloaded from website https://github.com/nagornovys/Cancer_cell_evolution 
+
+
+--- 
+
+
+
+
+
+
+
+
+
+
+
 Title: "tugHall: a simulator of cancer cell evolution based on the hallmarks of cancer, linked to the mutational states of tumor-related genes"
 
 Authors: Iurii Nagornov, Mamoru Kato, Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan
