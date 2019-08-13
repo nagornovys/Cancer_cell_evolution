@@ -17,9 +17,9 @@ https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an 
 
 Authors and contributor list: 
 --- 
-*Iurii Nagornov* 
+**Iurii Nagornov** 
 
-*Mamoru Kato*
+**Mamoru Kato**
 
 Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan
 
