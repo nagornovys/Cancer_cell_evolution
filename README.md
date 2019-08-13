@@ -6,12 +6,14 @@ Short description
 ---
 This is a script in R to simulate the cancer cell evolution in the framework of Hallmarks model proposed by Mamoru Kato (Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
 
-Licence Information: READ LICENSE
+Licence Information: READ LICENSE 
 ------
+GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007
 
-Project source can be downloaded from website 
-https://github.com/nagornovys/Cancer_cell_evolution 
+Project source can be downloaded from website  
 --- 
+https://github.com/nagornovys/Cancer_cell_evolution  -  developed resource
+https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an archive
 
 Authors and contributor list: 
 --- 
