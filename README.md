@@ -35,7 +35,7 @@ File List
 ---
 
 * _Tests.zip_ - archive with tests for program code. Each test is in the separate directory and has a note with explanation of details of test. Some tests need to change a code a bit, you can find information about change in the note and also in the code, for this, please, find word "test".
-* presentation_of_tests.pdf - presentation file with results of all tests. You can find all tests and results in a brief manner.
+* _presentation_of_tests.pdf_ - presentation file with results of all tests. You can find all tests and results in a brief manner.
 * _Colorectal_cancer.zip_ - the zip-arhive with R script and input files for simulation (please, see input files in the code and see a format of the input files in the presentation). Other script files are only for analysis the results of simulations. The set of genes is included for colorectal cancer as a example. Please, to change the genes - Hallmarks relations to another simulation. 
 
 Script to simulate
