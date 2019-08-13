@@ -72,7 +72,7 @@ In order to make the simulation, please, follow next procedure:
 2. To check or/and change the parameters of simulation in the end of file and in the input files.
 3. Run the simulation using _"model()"_ function. 
 4. To see data, please, see _cellout.txt_ file. 
-5. To analize results of simulation, please, use _ineq.R_ and _Analyze.R_ scripts.
+5. To analize results of simulation and to plot them, please, use _ineq.R_ and _Analyze.R_ scripts.
 
 
 Funding
