@@ -19,7 +19,7 @@ Reported bugs/fixes will be submitted to correction.
 
 Licence Information
 ------
-GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007 (READ LICENSE)
+GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007 (**READ LICENSE**)
 
 Project source can be downloaded from websites  
 --- 
