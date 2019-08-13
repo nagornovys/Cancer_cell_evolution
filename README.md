@@ -1,17 +1,17 @@
 tugHall
 ====================
-**tugHall** *(**tu**mor **g**ene-**Hall**mark)* is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
+**tugHall** _(**tu**mor **g**ene-**Hall**mark)_ is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
 
-This is a script in R to simulate the cancer cell evolution in the framework of the model proposed by _prof. Mamoru Kato_ 
-(Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN).
+This is a script in R to simulate the cancer cell evolution in the framework of the model proposed by _**prof. Mamoru Kato**_ 
+_(Head of Bioinformatics Department, Research Institute, Nation Cancer Center, Tokyo, JAPAN)_.
 
 Authors and contributor list: 
 --- 
-**Iurii Nagornov** 
+_**Iurii Nagornov**_ 
 
-**Mamoru Kato**
+_**Mamoru Kato**_
 
-Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan
+_Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan_
 
 All other known bugs and fixes can be sent to inagonov@ncc.go.jp
 
@@ -43,7 +43,7 @@ Script to simulate
 
 Input files
 ---
-* gene_cds2.txt - the information about *Names of genes*, *length of CDS (CoDing Sequence - the coding region of a gene)*, *relation to hallmarks*, *oncogene or suppressor* and *relative weights for hallmarks*.
+* gene_cds2.txt - the information about _Names of genes_, _length of CDS_ (CoDing Sequence - the coding region of a gene), _relation to hallmarks_, _oncogene or suppressor_ (o or s) and _relative weights for hallmarks_.
 * cellinit.txt - 
 
 Output files
