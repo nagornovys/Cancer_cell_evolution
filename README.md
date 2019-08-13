@@ -24,6 +24,7 @@ GNU GENERAL PUBLIC LICENSE Version 3 from 29 June 2007 (**READ LICENSE**)
 Project source can be downloaded from websites  
 --- 
 https://github.com/nagornovys/Cancer_cell_evolution  -  developed resource
+
 https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an archive
 
 Short description
