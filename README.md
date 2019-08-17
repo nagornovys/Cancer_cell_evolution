@@ -17,10 +17,7 @@ _**Mamoru Kato**_
 
 _Department of Bioinformatics, Research Institute, National Cancer Center Japan, Tokyo, Japan_
 
-All other known bugs and fixes can be sent to inagonov@ncc.go.jp
-
-Reported bugs/fixes will be submitted to correction.
-
+All questions and requests can be sent to inagonov@ncc.go.jp
 
 Contents
 --- 
