@@ -1,6 +1,15 @@
 tugHall
 ====================
 
+[![Build Status](https://travis-ci.org/citation-style-language/styles.svg?branch=master)](https://travis-ci.org/citation-style-language/styles)
+[![license](https://img.shields.io/badge/license-CC%20BY%20SA%203.0-blue.svg)](https://github.com/citation-style-language/styles#licensing)
+[![GitHub contributors](https://img.shields.io/github/contributors/citation-style-language/styles.svg)](https://github.com/citation-style-language/styles/graphs/contributors)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/citation-style-language/styles.svg)](https://github.com/citation-style-language/styles/pulls?q=is%3Apr+is%3Aclosed)
+
+[github.com/citation-style-language/styles](https://github.com/citation-style-language/styles) is the official repository for Citation Style Language (CSL) styles and is maintained by CSL project members.
+For more information, check out [CitationStyles.org](http://citationstyles.org/) and the [repository wiki](https://github.com/citation-style-language/styles/wiki).
+
+
 **tugHall** _(**tu**mor **g**ene-**Hall**mark)_ is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
 
 This is a script in _**R**_ to simulate the cancer cell evolution in the framework of the model proposed by _**prof. Mamoru Kato**_, 
