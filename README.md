@@ -22,6 +22,8 @@ All other known bugs and fixes can be sent to inagonov@ncc.go.jp
 Reported bugs/fixes will be submitted to correction.
 
 
+Contents
+--- 
 * [Project source](#Project-source)
 * [Short description](#Short-description)
 * [Content of package](#Content-of-package)
