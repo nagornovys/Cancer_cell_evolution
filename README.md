@@ -1,7 +1,5 @@
 tugHall
 ====================
-
-[![license](https://img.shields.io/badge/license-CC%20BY%20SA%203.0-blue.svg)](https://github.com/nagornovys/Cancer_cell_evolution/blob/master/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/nagornovys/Cancer_cell_evolution.svg)](https://github.com/nagornovys/Cancer_cell_evolution/graphs/contributors)
 [![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/nagornovys/Cancer_cell_evolution.svg)](https://github.com/nagornovys/Cancer_cell_evolution/pulls?q=is%3Apr+is%3Aclosed)
 
