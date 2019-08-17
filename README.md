@@ -1,5 +1,9 @@
 tugHall
 ====================
+
+[![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/nagornovys/Cancer_cell_evolution/master/LICENSE.txt)
+
+
 **tugHall** _(**tu**mor **g**ene-**Hall**mark)_ is a simulator of a cancer-cell evolution model, wherein gene mutations are linked to the tumor cell behaviors that are influenced by the hallmarks of cancer.
 
 This is a script in _**R**_ to simulate the cancer cell evolution in the framework of the model proposed by _**prof. Mamoru Kato**_, 
