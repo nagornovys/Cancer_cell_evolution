@@ -3,7 +3,7 @@ tugHall
 
 [![license](https://img.shields.io/badge/license-CC%20BY%20SA%203.0-blue.svg)](https://github.com/nagornovys/Cancer_cell_evolution#licensing)
 [![GitHub contributors](https://img.shields.io/github/contributors/nagornovys/Cancer_cell_evolution.svg)](https://github.com/nagornovys/Cancer_cell_evolution/graphs/contributors)
-[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/citation-style-language/styles.svg)](https://github.com/nagornovys/Cancer_cell_evolution/pulls?q=is%3Apr+is%3Aclosed)
+[![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/nagornovys/Cancer_cell_evolution.svg)](https://github.com/nagornovys/Cancer_cell_evolution/pulls?q=is%3Apr+is%3Aclosed)
 
 [github.com/citation-style-language/styles](https://github.com/citation-style-language/styles) is the official repository for Citation Style Language (CSL) styles and is maintained by CSL project members.
 For more information, check out [CitationStyles.org](http://citationstyles.org/) and the [repository wiki](https://github.com/citation-style-language/styles/wiki).
