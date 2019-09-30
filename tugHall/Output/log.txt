@@ -1,0 +1,14 @@
+genefile	Input/gene_cds2.txt
+cellfile	Input/cellinit.txt
+geneoutfile	Output/geneout.txt
+celloutfile	Output/cellout.txt
+logoutfile	Output/log.txt
+E	5e-04
+F	10
+m	1e-05
+uo	0.5
+us	0.5
+s	10
+k	0.1
+censore_n	30000
+censore_t	100

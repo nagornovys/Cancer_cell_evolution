@@ -1,0 +1,12 @@
+Order of gene dysfunction: from first to last	Frequency or number of cells with same order
+APC TP53 PIK3CA KRAS	41006
+	1720
+PIK3CA TP53 KRAS APC	396
+APC TP53 PIK3CA	20
+PIK3CA TP53 KRAS	20
+APC	13
+PIK3CA	10
+TP53 PIK3CA APC	4
+TP53	2
+KRAS	1
+PIK3CA TP53	1
