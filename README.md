@@ -23,8 +23,6 @@ Project source can be downloaded from websites
 ---
 https://github.com/nagornovys/Cancer_cell_evolution  -  developed resource
 
-https://www.doi.org/10.5281/zenodo.2667073  -  fixed resource in the form of an archive
-
 Short description
 ---
 The flood of recent cancer genomic data requires a coherent model that can sort out the findings to systematically explain clonal evolution and the resultant intra-tumor heterogeneity (ITH). Here, we present a new mathematical model designed to computationally simulate the evolution of cancer cells. The model connects the well-known hallmarks of cancer with the specific mutational states of tumor-related genes. The cell behavior phenotypes are stochastically determined and the hallmarks probabilistically interfere with the phenotypic probabilities. In turn, the hallmark variables depend on the mutational states of tumor-related genes. Thus, our software can deepen our understanding of cancer-cell evolution and generation of ITH.
