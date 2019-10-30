@@ -1,4 +1,4 @@
-tugHall
+tugHall version 1.1
 ====================
 
 [![License](https://img.shields.io/badge/License-GPLv3-orange.svg)](https://github.com/nagornovys/Cancer_cell_evolution/blob/master/LICENSE)
