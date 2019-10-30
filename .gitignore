@@ -2,6 +2,14 @@
 .Rhistory
 .Rapp.history
 
+
+# this file
+.gitignore
+.git
+
+# Store data
+.DS_Store
+
 # Session Data files
 .RData
 

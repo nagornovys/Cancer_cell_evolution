@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<title>tugHall version 1.1: USER-GUIDE</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">tugHall version 1.1: USER-GUIDE</h1>
+
+
+
+<div id="requirements-for-simulation-of-tughall" class="section level2">
+<h2>Requirements for simulation of tugHall:</h2>
+<p>R version <strong>3.3</strong> or later</p>
+<p>libraries: <strong>stringr</strong></p>
+<p>Note program has two different procedure in general: the first is simulation and the second is an analysis of simulation. This User-Guide is dedicated to the <strong>simulation part</strong> only.</p>
+<p><br /></p>
+</div>
+<div id="table-of-contents" class="section level1">
+<h1>Table of Contents</h1>
+<ol style="list-style-type: decimal">
+<li><a href="#quick">Quick start guide</a></li>
+<li><a href="#directories">Structure of directories</a></li>
+<li><a href="#inputs">On the inputs</a></li>
+<li><a href="#outputs">On the outputs</a></li>
+<li><a href="#run">How to run</a></li>
+</ol>
+<p><a name="quick"></a></p>
+</div>
+<div id="quick-start-guide" class="section level1">
+<h1>1. Quick start guide</h1>
+<p>The simplest way to run tugHall:</p>
+<ul>
+<li>save /tugHall/ directory to the working folder;</li>
+<li>run tugHall.R.</li>
+</ul>
+<p>The code has initial input parameters and input files in /Input/ folder, it runs automatically and after simulation in the regime of dialogue user can see results of simulation (please, see User-Guide-analysis for details), which will save to the /Output/ and /Figures/ folders. Note, for analysis procedure it is needed additional libraries and higher version of R - 3.6.0.</p>
+<p><a name="directories"></a></p>
+</div>
+<div id="structure-of-directories" class="section level1">
+<h1>2. Structure of directories</h1>
+<div id="root-directory" class="section level3">
+<h3>Root directory:</h3>
+<p><strong>User-Guide-tugHall.Rmd </strong> - the user guide to make simulation in Rmd format.</p>
+<p><strong>User-Guide-tugHall.html </strong> - the user guide to make simulation in html format.</p>
+<p><strong>User-Guide-analysis.Rmd </strong> - the user guide to make analysis and report in Rmd format.</p>
+<p><strong>User-Guide-analysis.html </strong> - the user guide to make analysis and report in html format.</p>
+<p>dir <strong>/tugHall/ </strong> - the directory with the program.</p>
+<p><br /></p>
+</div>
+<div id="tughall-directory" class="section level3">
+<h3>/tugHall/ directory:</h3>
+<p><strong>tugHall.R </strong> - program to run a simulation and define the parameters.</p>
+<p>dir <strong>/Code/ </strong> - the folder with the code and the library of functions.</p>
+<p>dir <strong>/Input/ </strong> - the folder with the input files.</p>
+<p>dir <strong>/Output/ </strong> - the folder with the output files.</p>
+<p>dir <strong>/Figures/ </strong> - the folder with figures of the plots.</p>
+<p><br /></p>
+</div>
+<div id="code-directory" class="section level3">
+<h3>/Code/ directory:</h3>
+<p><strong>CanSim.bib, pic_lic.jpg</strong> - the necessesary files for user guide.</p>
+<p><strong>tugHall_functions.R</strong> - the file with the functions for a simulation / core of program.</p>
+<p><strong>Analysis.R</strong> - the file to analyse the results of a simulation and plot figures.</p>
+<p><strong>Functions.R</strong> - the file with the functions for the analysis of results.</p>
+<p><br /></p>
+</div>
+<div id="input-directory" class="section level3">
+<h3>/Input/ directory:</h3>
+<p><strong>cellinit.txt </strong> - the file with a list of the initial cells with/without destroyed genes.</p>
+<p><strong>gene_cds2.txt</strong> - the file with the halmarks variables and the weights in the format of Table.1.</p>
+<p><br /></p>
+</div>
+<div id="output-directory" class="section level3">
+<h3>/Output/ directory:</h3>
+<p><strong>cellout.txt</strong> - the file with output of simulation in the format of Table.3 (see below).</p>
+<p><strong>geneout.txt</strong> - the file with information about halmarks variables and the weights.</p>
+<p><strong>log.txt </strong> - the file with information about all parameters.</p>
+<p><strong>Order_of_dysfunction.txt </strong> - the file with an information about order of gene dysfunction during evolution in the format of Table.4 (see below).</p>
+<p><strong>Weights.txt </strong> - the file with information about weights between hallmarks and genes in the format of Table.2.</p>
+<p><strong>VAF.txt </strong> - information about variant allel frequency (VAF) for each gene and each site in the genes in the format of Table.5 (see below).</p>
+<p><br /></p>
+</div>
+<div id="figures-directory" class="section level3">
+<h3>/Figures/ directory</h3>
+<p>In the <strong>/Figures/</strong> directory there are 13 figures of the *.jpg format, which appear after analysis of simulation. There are the examples and the descriptions in the “User-Guide-analysis” file:</p>
+<table style="width:14%;">
+<colgroup>
+<col width="6%"></col>
+<col width="6%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Files</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Barplot_N_cells_in_clones_DP.jpg</td>
+<td align="left">Barplot for number of cells in each clone for passengers and drivers</td>
+</tr>
+<tr class="even">
+<td align="left">Barplot_N_cells_in_clones.jpg</td>
+<td align="left">Barplot for number of cells in each clone for drivers only</td>
+</tr>
+<tr class="odd">
+<td align="left">Hallmarks.jpg</td>
+<td align="left">Time evolution of the average values of hallmarks</td>
+</tr>
+<tr class="even">
+<td align="left">Inequality_all_cells.jpg</td>
+<td align="left">Dependence of the inequality coefficient on number of all cells</td>
+</tr>
+<tr class="odd">
+<td align="left">Inequality_metastasis.jpg</td>
+<td align="left">Dependence of the inequality coefficient on number of metastasis cells</td>
+</tr>
+<tr class="even">
+<td align="left">Inequality_primary.jpg</td>
+<td align="left">Dependence of the inequality coefficient on number of primary tumor cells</td>
+</tr>
+<tr class="odd">
+<td align="left">Inequality.jpg</td>
+<td align="left">Time evolution of the inequality coefficient</td>
+</tr>
+<tr class="even">
+<td align="left">N_cells_in_clones_1.jpg</td>
+<td align="left">Time evolution of number of cells in each clone</td>
+</tr>
+<tr class="odd">
+<td align="left">N_cells_in_clones_2.jpg</td>
+<td align="left">Time evolution of number of cells in each clone using different scale</td>
+</tr>
+<tr class="even">
+<td align="left">N_cells.jpg</td>
+<td align="left">Time evolution of the number of cells</td>
+</tr>
+<tr class="odd">
+<td align="left">N_clones.jpg</td>
+<td align="left">Time evolution of the number of clones</td>
+</tr>
+<tr class="even">
+<td align="left">Probabilities.jpg</td>
+<td align="left">Time evolution of probabilities</td>
+</tr>
+<tr class="odd">
+<td align="left">Tree_clones.jpg</td>
+<td align="left">Tree of the clones</td>
+</tr>
+<tr class="even">
+<td align="left">ggtree_clones.jpg</td>
+<td align="left">Tree of the clones using ggtree package</td>
+</tr>
+<tr class="odd">
+<td align="left"><img width="200/"></td>
+<td align="left"><img width="440/"></td>
+</tr>
+</tbody>
+</table>
+<p><a name="inputs"></a></p>
+</div>
+</div>
+<div id="on-the-inputs" class="section level1">
+<h1>3. On the inputs</h1>
+<div id="input-of-the-hallmarks-variables-and-genes-weights" class="section level2">
+<h2>Input of the Hallmarks variables and gene’s weights</h2>
+<p>There is an input file “tugHall/Input/gene_cds2.txt” to define the halmarks variables and weights (first 10 lines):</p>
+<table>
+<caption><strong>Table 1. Input file for genes.</strong> Example of input file for hallmarks and weights in the file <em><strong>tugHall/Input/gene_cds2.txt</strong></em>.</caption>
+<thead>
+<tr class="header">
+<th align="center">Genes</th>
+<th align="center">length CDS</th>
+<th align="center">Hallmark</th>
+<th align="center">Suppressor or Oncogene</th>
+<th align="center">Weights</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">APC</td>
+<td align="center">8532</td>
+<td align="center">apoptosis</td>
+<td align="center">s</td>
+<td align="center">0.1111111</td>
+</tr>
+<tr class="even">
+<td align="center">APC</td>
+<td align="center">8532</td>
+<td align="center">growth</td>
+<td align="center">s</td>
+<td align="center">0.1666667</td>
+</tr>
+<tr class="odd">
+<td align="center">APC</td>
+<td align="center">8532</td>
+<td align="center">invasion</td>
+<td align="center">s</td>
+<td align="center">0.2857143</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">567</td>
+<td align="center">apoptosis</td>
+<td align="center">o</td>
+<td align="center">0.3333333</td>
+</tr>
+<tr class="odd">
+<td align="center">KRAS</td>
+<td align="center">567</td>
+<td align="center">growth</td>
+<td align="center">o</td>
+<td align="center">0.3333333</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">567</td>
+<td align="center">immortalization</td>
+<td align="center">o</td>
+<td align="center">0.5714286</td>
+</tr>
+<tr class="odd">
+<td align="center">KRAS</td>
+<td align="center">567</td>
+<td align="center">angiogenesis</td>
+<td align="center">o</td>
+<td align="center">0.4285714</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">567</td>
+<td align="center">invasion</td>
+<td align="center">o</td>
+<td align="center">0.1428571</td>
+</tr>
+<tr class="odd">
+<td align="center">TP53</td>
+<td align="center">1182</td>
+<td align="center">apoptosis</td>
+<td align="center">s</td>
+<td align="center">0.1111111</td>
+</tr>
+<tr class="even">
+<td align="center">TP53</td>
+<td align="center">1182</td>
+<td align="center">growth</td>
+<td align="center">s</td>
+<td align="center">0.1666667</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p><strong>Genes</strong> - name of gene, e.g., TP53, KRAS. Note the diversity of names is defined by user, so, please, be carefull with typing of the names. The program detects all unique names of genes.</p></li>
+<li><p><strong>length CDS</strong> - length of CDS for each gene, e.g., 2724, 10804.</p></li>
+<li><strong>Hallmark</strong> - hallmark name, e.g., “apoptosis”. Available names:</li>
+</ol>
+<ul>
+<li>apoptosis</li>
+<li>immortalization</li>
+<li>growth</li>
+<li>anti-growth</li>
+<li>angiogenesis</li>
+<li>invasion</li>
+</ul>
+<p>Note “growth” and “anti-growth” are related to one hallmark “growth/anti-growth”. Note “invasion” is related to “invasion/metastatsis” hallmark.</p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Suppressor or oncogene.</strong> - Distinction of oncogene/suppressor:</li>
+</ol>
+<ul>
+<li>o: oncogene</li>
+<li>s: suppressor</li>
+<li>?: unknown (will be randomly assigned)</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Weights</strong> - Hallmark weights or weights for hallmark-genes relations, e.g., 0.333, 0.5. For each hallmark program checks the summation of all weights. If it is not equal 1, then program makes normalization to get unity. Note if the gene belongs to more than one hallmark type, separate it into separate lines.</li>
+</ol>
+<hr />
+<p>After that the program defines all weights, and all <strong>unknown weights</strong> equal to 0. Note that program makes normalization, so sum of all weights should be equal 1 for each column. User can not define weights in this file, it is final input weights for simulation, which are saved into “tugHall/Output/Weights.txt” file. There are the first 10 lines only:</p>
+<table>
+<caption><strong>Table 2. Weights for hallmarks.</strong> Example of weights for hallmarks and genes from <em><strong>tugHall/Output/Weights.txt</strong></em> file. Unknown values are equal 0.</caption>
+<thead>
+<tr class="header">
+<th align="center">Genes</th>
+<th align="center">Apoptosis, <span class="math inline">\(H_a\)</span></th>
+<th align="center">Angiogenesis, <span class="math inline">\(H_b\)</span></th>
+<th align="center">Growth / Anti-growth, <span class="math inline">\(H_d\)</span></th>
+<th align="center">Immortalization, <span class="math inline">\(H_i\)</span></th>
+<th align="center">Invasion / Metastasis, <span class="math inline">\(H_{im}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">APC</td>
+<td align="center">0.1590909</td>
+<td align="center">0.0000000</td>
+<td align="center">0.1666667</td>
+<td align="center">0.0000000</td>
+<td align="center">0.2195122</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">0.4772727</td>
+<td align="center">0.4285714</td>
+<td align="center">0.3333333</td>
+<td align="center">0.5714286</td>
+<td align="center">0.1097561</td>
+</tr>
+<tr class="odd">
+<td align="center">TP53</td>
+<td align="center">0.1590909</td>
+<td align="center">0.4285714</td>
+<td align="center">0.1666667</td>
+<td align="center">0.4285714</td>
+<td align="center">0.3292683</td>
+</tr>
+<tr class="even">
+<td align="center">PIK3CA</td>
+<td align="center">0.2045455</td>
+<td align="center">0.1428571</td>
+<td align="center">0.3333333</td>
+<td align="center">0.0000000</td>
+<td align="center">0.3414634</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p><strong>Genes</strong> - name of genes, e.g., TP53, KRAS.</p></li>
+<li><p><strong>Apoptosis, <span class="math inline">\(H_a\)</span></strong> - weights of hallmark “Apoptosis” with genes, e.g., 0.333, 0.5.</p></li>
+<li><p><strong>Angiogenesis, <span class="math inline">\(H_b\)</span></strong> - weights of hallmark “Angiogenesis” with genes, e.g., 0.333, 0.5.</p></li>
+<li><p><strong>Growth / Anti-growth, <span class="math inline">\(H_d\)</span></strong> - weights of hallmark “Growth / Anti-growth” with genes, e.g., 0.333, 0.5.</p></li>
+<li><p><strong>Immortalization, <span class="math inline">\(H_i\)</span></strong> - weights of hallmark “Immortalization” with genes, e.g., 0.333, 0.5.</p></li>
+<li><p><strong>Invasion / Metastasis, <span class="math inline">\(H_{im}\)</span></strong> - weights of hallmark “Invasion / Metastasis” with genes, e.g., 0.333, 0.5.</p></li>
+</ol>
+<hr />
+</div>
+<div id="input-the-probabilities" class="section level2">
+<h2>Input the probabilities</h2>
+<p>The all probabilities and the functional dependences are defined in the model description. The input of probabilities is possible in the code <strong>“tugHall.R”</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Probability variable and it’s value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>E0 &lt;- 2E-4</strong></td>
+<td align="left">Parameter <span class="math inline">\(E0\)</span> in the division probability</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>F0 &lt;- 1E0</strong></td>
+<td align="left">Parameter <span class="math inline">\(F0\)</span> in the division probability</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>m &lt;- 1E-6</strong></td>
+<td align="left">Mutation probability <span class="math inline">\(m'\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>uo &lt;- 0.5</strong></td>
+<td align="left">Oncogene mutation probability <span class="math inline">\(u_o\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>us &lt;- 0.5</strong></td>
+<td align="left">Suppressor mutation probability <span class="math inline">\(u_s\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>s &lt;- 10</strong></td>
+<td align="left">Parameter in the sigmoid function <span class="math inline">\(s\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>k &lt;- 0.1</strong></td>
+<td align="left">Environmental death probability <span class="math inline">\(k'\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><img width="250/"></td>
+<td align="left"><img width="270/"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="input-of-the-files-names" class="section level2">
+<h2>Input of the file’s names</h2>
+<p>Also in the code <strong>“tugHall.R”</strong> user can define names of input and output files, and additional parameters of simulation:</p>
+<table style="width:14%;">
+<colgroup>
+<col width="6%"></col>
+<col width="6%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variables and the file names</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>genefile &lt;- ‘gene_cds2.txt’</strong></td>
+<td align="left">File with information about weights</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>cellfile &lt;- ‘cellinit.txt’</strong></td>
+<td align="left">Initial Cells</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>geneoutfile &lt;- ‘geneout.txt’</strong></td>
+<td align="left">Gene Out file with Hallmarks</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>celloutfile &lt;- ‘cellout.txt’ </strong></td>
+<td align="left">Output information of simulation</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>logoutfile &lt;- ‘log.txt’ </strong></td>
+<td align="left">Log file to save the input information of simulation</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>censore_n &lt;- 30000 </strong></td>
+<td align="left">Max cell number where the program forcibly stops</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>censore_t &lt;- 200 </strong></td>
+<td align="left">Max time where the program forcibly stops</td>
+</tr>
+<tr class="even">
+<td align="left"><img width="200/"></td>
+<td align="left"><img width="350/"></td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="input-of-the-initial-cells" class="section level2">
+<h2>Input of the initial cells</h2>
+<p>There is a possibility to define initial cells in <em><strong>“tugHall/Input/cellinit.txt”</strong></em> file with definition of the genes for each cell, which are mutated:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Cell ID</th>
+<th align="left">List of mutated genes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">“”</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">“APC”</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">“APC, KRAS”</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">“KRAS”</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">“TP53, KRAS”</td>
+</tr>
+<tr class="even">
+<td align="left">…</td>
+<td align="left">…</td>
+</tr>
+<tr class="odd">
+<td align="left">1000</td>
+<td align="left">“”</td>
+</tr>
+<tr class="even">
+<td align="left"><img width="50/"></td>
+<td align="left"><img width="150/"></td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><p><strong>Cell ID</strong> - number or ID of cell, e.g., 1, 324.</p></li>
+<li><p><strong>List of mutated genes</strong> - list of mutated genes for each cell, e.g. “”, “KRAS, APC”. Comma separated. The “” means primary cell without mutations. Note in the code <strong>“tugHall.R”</strong> user can make <em><strong>“tugHall/Input/cellinit.txt”</strong></em> file with a list of cell with the same mutated genes.</p></li>
+</ol>
+<hr />
+<p><a name="outputs"></a></p>
+</div>
+</div>
+<div id="on-the-outputs" class="section level1">
+<h1>4. On the outputs</h1>
+<p>Output data content several files after simulation. The “log.txt” and “geneout.txt” files have copied input information about variables and gene names. “Weights.txt” has information about weights of genes for hallmarks (it is shown in the <a href="#inputs">“On the inputs”</a>). “Cellout.txt” has information about dynamics of cell evolution and all variabls.</p>
+<p>In the <strong>“User-Guide-analysis”</strong> file it is explained how to run additional functions to analyse the output data, to calculate and to plot dependencies:</p>
+<ul>
+<li>“Order_of_dysfunction.txt” has information about order of gene dysfunction during evolution.</li>
+<li>“VAF.txt” file has information about variant allele frequencies for each gene and each site in the genes, which were mutated.</li>
+<li>the folder “Figures/” has many plots.</li>
+</ul>
+<p>Note the program has two different procedure in general: the first is simulation and the second is an analysis of simulation.</p>
+<div id="content-of-log.txt-file" class="section level2">
+<h2>Content of “log.txt” file</h2>
+<p>File <strong>“log.txt”</strong> contents information about probabilities and file’s names. These variables are explained in the <a href="#inputs">“On the inputs”</a>.</p>
+<table>
+<caption><strong>Table 3. log.txt file.</strong> Example of log.txt file with output information about parameters of the simulation.</caption>
+<thead>
+<tr class="header">
+<th align="center">Variable</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">genefile</td>
+<td align="center">Input/gene_cds2.txt</td>
+</tr>
+<tr class="even">
+<td align="center">cellfile</td>
+<td align="center">Input/cellinit.txt</td>
+</tr>
+<tr class="odd">
+<td align="center">geneoutfile</td>
+<td align="center">Output/geneout.txt</td>
+</tr>
+<tr class="even">
+<td align="center">celloutfile</td>
+<td align="center">Output/cellout.txt</td>
+</tr>
+<tr class="odd">
+<td align="center">logoutfile</td>
+<td align="center">Output/log.txt</td>
+</tr>
+<tr class="even">
+<td align="center">E</td>
+<td align="center">5e-04</td>
+</tr>
+<tr class="odd">
+<td align="center">F</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">m</td>
+<td align="center">1e-05</td>
+</tr>
+<tr class="odd">
+<td align="center">uo</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="even">
+<td align="center">us</td>
+<td align="center">0.5</td>
+</tr>
+<tr class="odd">
+<td align="center">s</td>
+<td align="center">10</td>
+</tr>
+<tr class="even">
+<td align="center">k</td>
+<td align="center">0.1</td>
+</tr>
+<tr class="odd">
+<td align="center">censore_n</td>
+<td align="center">30000</td>
+</tr>
+<tr class="even">
+<td align="center">censore_t</td>
+<td align="center">100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="content-of-geneout.txt-file" class="section level2">
+<h2>Content of “geneout.txt” file</h2>
+<p>File <strong>“geneout.txt”</strong> contents information about weights between hallmarks and genes, which are defined by user. These variables also are explained in the <a href="#inputs">“On the inputs”</a>.</p>
+<table>
+<caption><strong>Table 4. geneout.txt file.</strong> Example of geneout.txt file with output information about the weights between hallmark and genes.</caption>
+<thead>
+<tr class="header">
+<th align="center">Gene_name</th>
+<th align="center">Hallmark_name</th>
+<th align="center">Weight</th>
+<th align="center">Suppressor_or_oncogene</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">APC</td>
+<td align="center">apoptosis</td>
+<td align="center">0.1590909</td>
+<td align="center">s</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">apoptosis</td>
+<td align="center">0.4772727</td>
+<td align="center">o</td>
+</tr>
+<tr class="odd">
+<td align="center">TP53</td>
+<td align="center">apoptosis</td>
+<td align="center">0.1590909</td>
+<td align="center">s</td>
+</tr>
+<tr class="even">
+<td align="center">PIK3CA</td>
+<td align="center">apoptosis</td>
+<td align="center">0.2045455</td>
+<td align="center">o</td>
+</tr>
+<tr class="odd">
+<td align="center">KRAS</td>
+<td align="center">immortalization</td>
+<td align="center">0.5714286</td>
+<td align="center">o</td>
+</tr>
+<tr class="even">
+<td align="center">TP53</td>
+<td align="center">immortalization</td>
+<td align="center">0.4285714</td>
+<td align="center">s</td>
+</tr>
+<tr class="odd">
+<td align="center">APC</td>
+<td align="center">growth|anti-growth</td>
+<td align="center">0.1666667</td>
+<td align="center">s</td>
+</tr>
+<tr class="even">
+<td align="center">KRAS</td>
+<td align="center">growth|anti-growth</td>
+<td align="center">0.3333333</td>
+<td align="center">o</td>
+</tr>
+<tr class="odd">
+<td align="center">TP53</td>
+<td align="center">growth|anti-growth</td>
+<td align="center">0.1666667</td>
+<td align="center">s</td>
+</tr>
+<tr class="even">
+<td align="center">PIK3CA</td>
+<td align="center">growth|anti-growth</td>
+<td align="center">0.3333333</td>
+<td align="center">o</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="content-of-cellout.txt-file" class="section level2">
+<h2>Content of “cellout.txt” file</h2>
+<p>File <strong>“cellout.txt”</strong> contents the results of simulation and includes the evolution data: all output data for each cell at each timestep (first 10 lines):</p>
+<table>
+<caption><strong>Table 5. Output data.</strong> Example of output data for all cells. The names of columns are related the description in the Tables 1,2 and Figures 2,3</caption>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">AvgOrIndx</th>
+<th align="center">ID</th>
+<th align="center">ParentID.Birthday</th>
+<th align="center">c.</th>
+<th align="center">d.</th>
+<th align="center">i.</th>
+<th align="center">im.</th>
+<th align="center">a.</th>
+<th align="center">k.</th>
+<th align="center">E.</th>
+<th align="center">N</th>
+<th align="center">Nmax.</th>
+<th align="center">M</th>
+<th align="center">Ha</th>
+<th align="center">Him</th>
+<th align="center">Hi</th>
+<th align="center">Hd</th>
+<th align="center">Hb</th>
+<th align="center">type</th>
+<th align="center">mut_den</th>
+<th align="center">PosDriver.APC</th>
+<th align="center">PosDriver.KRAS</th>
+<th align="center">PosDriver.TP53</th>
+<th align="center">PosDriver.PIK3CA</th>
+<th align="center">PosPasngr.APC</th>
+<th align="center">PosPasngr.KRAS</th>
+<th align="center">PosPasngr.TP53</th>
+<th align="center">PosPasngr.PIK3CA</th>
+<th align="center">Clone.number</th>
+<th align="center">Passengers.Clone.number</th>
+<th align="center">Mix.Clone.number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">avg</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">2</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">3</td>
+<td align="center">3</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">5</td>
+<td align="center">5</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">6</td>
+<td align="center">6</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">7</td>
+<td align="center">7</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">8</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr class="even">
+<td align="center">1</td>
+<td align="center">9</td>
+<td align="center">9</td>
+<td align="center">0:0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0.0066929</td>
+<td align="center">0.1</td>
+<td align="center">5e-04</td>
+<td align="center">1000</td>
+<td align="center">2000</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<ol style="list-style-type: decimal">
+<li><strong>Time</strong> - the time step, e.g., 1, 50.</li>
+<li><strong>AvgOrIndx</strong> - “avg” or “index”: “avg” is for lines with averaging values, “index” shows the cell’s index at the current time step, e.g., avg, 4,7.</li>
+<li><strong>ID</strong> - the unique ID of cell, e.g., 1, 50.</li>
+<li><strong>ParentID.Birthday</strong> - the first number is the parent ID, the second number is the birthday time step, e.g., 0:0, 45:5.</li>
+<li><strong>c</strong> - the counter of cell divisions.</li>
+<li><strong>d</strong> - the value of probability of division for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>i</strong> - the value of probability of immortalization for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>im</strong> - the value of probability of invasion/metastasis for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>a</strong> - the value of probability of apoptosis for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>k</strong> - the value of probability of death due to the environment for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>E</strong> - the coefficient for the function of the division probability, e.g., 10^4, 10^5.</li>
+<li><strong>N</strong> - the number of primary tumor cells at this time step, e.g., 134, 5432.</li>
+<li><strong>Nmax</strong> - the maximal number of primary tumor cells for the cell, e.g., 10000, 5000.</li>
+<li><strong>M</strong> - the number of metastasis cells at this time step, e.g., 16, 15439.</li>
+<li><strong>Ha</strong> - the value of the hallmar “Apoptosis” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Him</strong> - the value of the hallmar “Invasion / Metastasis” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Hi</strong> - the value of the hallmar “Immortalization” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Hd</strong> e.g., 0.1, 0.4444 - the value of the hallmar “Growth / Anti-growth” for the cell, e.g., 0.1, 0.4444 .</li>
+<li><strong>Hb</strong> e.g., 0.1, 0.4444 - the value of the hallmar “Angiogenesis” for the cell, e.g., 0.1, 0.4444 .</li>
+<li><strong>type</strong> - the type of the cell: “0” is primary tumor cell, “1” is metastasis cell, e.g., 0, 1.</li>
+<li><strong>mut_den</strong> - the density of the mutation for the cell, e.g., 0, 0.32.</li>
+</ol>
+<p>The columns from 22 to 25 are related to names in the form <strong>PosDriver. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals to the number of genes. These columns show the mutational position(s) in a <strong>driver</strong> gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 3493:4, 4531:34.</p>
+<ol start="22" style="list-style-type: decimal">
+<li><strong>PosDriver.(Gene_1=“APC”)</strong> - for the first gene.</li>
+<li><strong>PosDriver.(Gene_2=“KRAS”)</strong> - for the second gene.</li>
+<li><strong>PosDriver.(Gene_…)</strong> - …</li>
+<li><strong>PosDriver.(Gene_last=“PIK3CA”)</strong> - for the last gene.</li>
+</ol>
+<p>The columns from 26 to 29 are related to names in the form <strong>PosPassngr. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals to the number of genes. These columns show the mutational position(s) in a <strong>passenger</strong> gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 8952:43, 531:4.</p>
+<ol start="26" style="list-style-type: decimal">
+<li><strong>PosPassngr.APC</strong> - for the first gene “APC”.</li>
+<li><strong>PosPassngr.KRAS</strong> - for the second gene “KRAS”.</li>
+<li><strong>PosPassngr.(Gene_…)</strong> - …</li>
+<li><strong>PosPassngr.(Gene_last=“PIK3CA”)</strong> - for the last gene.</li>
+</ol>
+<p><br /></p>
+<ol start="30" style="list-style-type: decimal">
+<li><strong>Clone.number</strong> - the clone number is calculated from binary code of mutated genes. For example, if gene is mutated then its value in binary code equal 1, and if no, it is 0. For example, the cells have only 4 genes in simulation, so “Clone.number” can have binary numbers from 0000 to 1111, that is related decimal numbers from 0 to 15, e.g., 15, 4.</li>
+<li><strong>Passengers.Clone.number</strong> - same as for “Clone.number”, but for passenger genes, e.g., 15, 4.</li>
+<li><strong>Mix.Clone.number</strong> - same as for “Clone.number”, but for passenger and driver genes together. In this case the length of binary number is two times larger than for driver case, e.g., 35, 16.</li>
+</ol>
+<hr />
+<p><a name="run"></a></p>
+</div>
+</div>
+<div id="how-to-run" class="section level1">
+<h1>5. How to run</h1>
+<p>In order to make the simulation, please, follow next procedure:</p>
+<ol style="list-style-type: decimal">
+<li><p>Copy <strong>/tugHall/</strong> directory into the working directory.</p></li>
+<li><p>CD to the <strong>/tugHall/</strong> directory.</p></li>
+<li><p>Run <strong>tugHall.R</strong> file, using command line like</p></li>
+</ol>
+<p><code>R --vanilla &lt; tugHall.R</code></p>
+<p>or using <strong>R Studio</strong> with line by line procedure. In this case we have:</p>
+<ul>
+<li>load <em>library(stringr)</em> and <em>source(file = “Code/tugHall_functions.R”)</em>;</li>
+<li>create the Output and Figures directories, if it is needed;</li>
+<li>define the parameters of simulation;</li>
+<li>make of the input file for initial cells, if it is needed;</li>
+<li>run <em>model()</em> function to simulate;</li>
+<li>run <em>source(“Code/Analysis.R”)</em> in order to analyse the results and plot figures in the regime of dialogue (see “User-Guide-analysis”).</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>To make report of simulation, please, rename and change “User-Guide-analysis.RMD” (for more details, please, see “Writing reproducible reports in R” on the github <a href="https://nicercode.github.io/guides/reports/" class="uri">https://nicercode.github.io/guides/reports/</a>), which uses the output and input files in <strong>/Input/, /Output/, /Figures/</strong> directories with actual information. For more details, please, see “User-Guide-analysis”.</li>
+</ol>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

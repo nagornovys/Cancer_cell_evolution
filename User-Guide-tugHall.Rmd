@@ -1,0 +1,392 @@
+---
+title: "tugHall version 1.1: USER-GUIDE"
+#author: "Iurii Nagornov and Mamoru Kato"
+## date: "`r Sys.Date()`"
+bibliography: tugHall/Code/CanSim.bib
+output: 
+    rmarkdown::html_vignette:
+    citation_package: natbib
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  fig.path='tugHall/Figures/',
+  echo=FALSE, 
+  warning=FALSE, 
+  message=FALSE,
+  collapse = TRUE,
+  comment = "#>"
+)
+
+Sys.setenv("TimeZone" = "Japan")
+```
+
+##Requirements for simulation of tugHall:
+
+R version **3.3** or later
+
+libraries: **stringr** 
+
+Note program has two different procedure in general: the first is simulation and the second is an analysis of simulation.
+This User-Guide is dedicated to the **simulation part** only. 
+
+<br />
+
+# Table of Contents
+1. [Quick start guide](#quick)
+2. [Structure of directories](#directories)
+3. [On the inputs](#inputs)
+4. [On the outputs](#outputs)
+5. [How to run](#run)
+
+<a name="quick"></a>
+
+#1. Quick start guide 
+
+The simplest way to run tugHall:
+
+- save /tugHall/ directory to the working folder;
+- run tugHall.R.
+
+The code has initial input parameters and input files in /Input/ folder, it runs automatically and after simulation in the regime of dialogue user can see results of simulation (please, see User-Guide-analysis for details), which will save to the /Output/ and /Figures/ folders. Note, for analysis procedure it is needed additional libraries and higher version of R - 3.6.0.
+
+
+<a name="directories"></a>
+
+#2. Structure of directories 
+
+
+
+
+### Root directory:
+
+**User-Guide-tugHall.Rmd ** - the user guide to make simulation in Rmd format.
+
+**User-Guide-tugHall.html ** - the user guide to make simulation in html format.
+
+**User-Guide-analysis.Rmd ** - the user guide to make analysis and report in Rmd format.
+
+**User-Guide-analysis.html ** - the user guide to make analysis and report in html format.
+
+dir **/tugHall/ ** - the directory with the program.  
+
+<br />
+
+###/tugHall/ directory:
+
+**tugHall.R ** - program to run a simulation and define the parameters.
+
+dir **/Code/ ** - the folder with the code and the library of functions.
+
+dir **/Input/ ** - the folder with the input files.
+
+dir **/Output/ ** - the folder with the output files.
+
+dir **/Figures/ ** - the folder with figures of the plots.  
+
+<br />
+
+###/Code/ directory:
+
+**CanSim.bib, pic_lic.jpg** - the necessesary files for user guide.
+
+**tugHall_functions.R** - the file with the functions for a simulation / core of program.
+
+**Analysis.R** - the file to analyse the results of a simulation and plot figures.
+
+**Functions.R** - the file with the functions for the analysis of results.  
+
+<br />
+
+###/Input/ directory:
+
+**cellinit.txt ** - the file with a list of the initial cells with/without destroyed genes. 
+
+**gene_cds2.txt** - the file with the halmarks variables and the weights in the format of Table.1.
+
+
+<br />
+
+###/Output/ directory:
+
+**cellout.txt** - the file with output of simulation in the format of Table.3 (see below).
+
+**geneout.txt** - the file with information about halmarks variables and the weights.
+
+**log.txt ** - the file with information about all parameters. 
+
+**Order_of_dysfunction.txt ** -  the file with an information about order of gene dysfunction during evolution in the format of Table.4 (see below).
+
+**Weights.txt ** - the file with information about weights between hallmarks and genes in the format of Table.2.
+
+**VAF.txt ** - information about variant allel frequency (VAF) for each gene and each site in the genes in the format of Table.5 (see below).
+
+<br />
+
+###/Figures/ directory
+
+In the **/Figures/** directory there are 13 figures of the \*.jpg format, which appear after analysis of simulation. There are the examples and the descriptions in the "User-Guide-analysis" file: 
+
+|  Files  | Description  |
+|:---|:---|
+| Barplot_N_cells_in_clones_DP.jpg | Barplot for number of cells in each clone for passengers and drivers |
+| Barplot_N_cells_in_clones.jpg |Barplot for number of cells in each clone for drivers only |
+| Hallmarks.jpg | Time evolution of the average values of hallmarks |
+| Inequality_all_cells.jpg | Dependence of the inequality coefficient on number of all cells |
+| Inequality_metastasis.jpg | Dependence of the inequality coefficient on number of metastasis cells  |
+| Inequality_primary.jpg | Dependence of the inequality coefficient on number of primary tumor cells  |
+| Inequality.jpg | Time evolution of the inequality coefficient |
+| N_cells_in_clones_1.jpg | Time evolution of number of cells in each clone |
+| N_cells_in_clones_2.jpg | Time evolution of number of cells in each clone using different scale|
+| N_cells.jpg | Time evolution of the number of cells|
+| N_clones.jpg | Time evolution of the number of clones|
+| Probabilities.jpg |Time evolution of probabilities|
+| Tree_clones.jpg | Tree of the clones|
+| ggtree_clones.jpg | Tree of the clones using ggtree package |
+| <img width=200/> | <img width=440/> |
+
+
+
+<a name="inputs"></a>
+
+#3. On the inputs 
+
+## Input of the Hallmarks variables and gene's weights
+
+There is an input file "tugHall/Input/gene_cds2.txt" to define the halmarks variables and weights (first 10 lines):
+
+```{r, echo=FALSE, results='asis'}
+x <- read.csv(file = "tugHall/Input/gene_cds2.txt",header = FALSE, sep = "\t", nrows = 10)
+knitr::kable(x, col.names = c("Genes","length CDS","Hallmark","Suppressor or Oncogene","Weights"), align = "c", caption = "**Table 1. Input file for genes.** Example of input file for hallmarks and weights in the file _**tugHall/Input/gene_cds2.txt**_.")
+```
+
+
+1. **Genes**  - name of gene, e.g., TP53, KRAS. Note the diversity of names is defined by user, so, please, be carefull with typing of the names. The program detects all unique names of genes.
+
+2. **length CDS** - length of CDS for each gene, e.g., 2724, 10804.
+
+3. **Hallmark** - hallmark name, e.g., "apoptosis". Available names: 
+- apoptosis
+- immortalization
+- growth
+- anti-growth
+- angiogenesis
+- invasion
+
+Note "growth" and "anti-growth" are related to one hallmark "growth/anti-growth".
+Note "invasion" is related to "invasion/metastatsis" hallmark.
+
+4. **Suppressor or oncogene.**  - Distinction of oncogene/suppressor:
+- o: oncogene
+- s: suppressor
+- ?: unknown (will be randomly assigned)
+
+5. **Weights**  - Hallmark weights or weights for hallmark-genes relations, e.g., 0.333, 0.5. For each hallmark program checks the summation of all weights. If it is not equal 1, then program makes normalization to get unity. Note if the gene belongs to more than one hallmark type, separate it into separate lines.
+
+---
+
+
+After that the program defines all weights, and all **unknown weights** equal to 0. Note that program makes normalization, so sum of all weights should be equal 1 for each column. User can not define weights in this file, it is final input  weights for simulation, which are saved into "tugHall/Output/Weights.txt" file. There are the first 10 lines only: 
+
+```{r, echo=FALSE, results='asis'}
+x <- read.csv(file = "tugHall/Output/Weights.txt", header = TRUE, sep = "\t", nrows = 10)
+knitr::kable(x,  col.names = c("Genes", "Apoptosis, $H_a$", "Angiogenesis, $H_b$", "Growth / Anti-growth, $H_d$", "Immortalization, $H_i$", 
+                               "Invasion / Metastasis, $H_{im}$"), align = "c", caption = "**Table 2. Weights for hallmarks.** Example of weights for hallmarks and genes from _**tugHall/Output/Weights.txt**_ file. Unknown values are equal 0.")
+```
+
+1. **Genes** - name of genes, e.g., TP53, KRAS.
+
+2. **Apoptosis, $H_a$** - weights of hallmark "Apoptosis" with genes, e.g., 0.333, 0.5.
+
+3. **Angiogenesis, $H_b$** - weights of hallmark "Angiogenesis" with genes, e.g., 0.333, 0.5.
+
+4. **Growth / Anti-growth, $H_d$** - weights of hallmark "Growth / Anti-growth" with genes, e.g., 0.333, 0.5.
+
+5. **Immortalization, $H_i$** - weights of hallmark "Immortalization" with genes, e.g., 0.333, 0.5.
+
+6. **Invasion / Metastasis, $H_{im}$** - weights of hallmark "Invasion / Metastasis" with genes, e.g., 0.333, 0.5.
+
+---
+
+##Input the probabilities
+
+The all probabilities and the functional dependences are defined in the model description. 
+The input of probabilities is possible in the code **"tugHall.R"**:
+
+
+|  Probability variable and it's value | Description  |
+|:---|:---|
+| **E0 <- 2E-4**    | Parameter $E0$ in the division probability | 
+| **F0 <- 1E0**     | Parameter $F0$ in the division probability  |
+| **m <-  1E-6**    | Mutation probability  $m'$ |
+| **uo <- 0.5**     | Oncogene mutation probability $u_o$ |
+| **us <- 0.5**     | Suppressor mutation probability $u_s$ | 
+| **s <-  10**      | Parameter in the sigmoid function $s$ |  
+| **k <-  0.1**     | Environmental death probability $k'$ |
+| <img width=250/> | <img width=270/> |
+---
+
+##Input of the file's names
+
+Also in the code **"tugHall.R"** user can define names of input and output files, and additional parameters of simulation:
+
+|  Variables and the file names  | Description  |
+|:---|:---|
+| **genefile <- 'gene_cds2.txt'**     | File with information about weights  |
+| **cellfile <- 'cellinit.txt'**      | Initial Cells  |
+| **geneoutfile <- 'geneout.txt'**    | Gene Out file with Hallmarks  |
+| **celloutfile <- 'cellout.txt' **   | Output information of simulation  |
+| **logoutfile <-  'log.txt' **       | Log file to save the input information of simulation  |
+| **censore_n <- 30000  **     | Max cell number where the program forcibly stops  |
+| **censore_t <- 200 **        | Max time where the program forcibly stops  |
+| <img width=200/> | <img width=350/> |
+---
+
+
+
+##Input of the initial cells
+
+There is a possibility to define initial cells in _**"tugHall/Input/cellinit.txt"**_ file with definition of the genes for each cell, which are mutated:
+
+|  Cell ID  | List of mutated genes  |
+|:---|:---|
+| 1 | ""  |
+| 2    |  "APC" |
+| 3   | "APC, KRAS"  |
+| 4   | "KRAS"  |
+| 5   | "TP53, KRAS"  |
+| ...   | ...  |
+| 1000        | ""  |
+| <img width=50/> | <img width=150/> |
+
+1. **Cell ID**  - number or ID of cell, e.g., 1, 324.
+
+2. **List of mutated genes** - list of mutated genes for each cell, e.g. "", "KRAS, APC". Comma separated. The "" means primary cell without mutations.
+Note in the code **"tugHall.R"** user can make _**"tugHall/Input/cellinit.txt"**_ file with a list of cell with the same mutated genes.
+
+---
+
+<a name="outputs"></a>
+
+#4. On the outputs 
+
+Output data content several files after simulation. The "log.txt" and "geneout.txt" files have copied input information about variables and gene names. "Weights.txt" has information about weights of genes for hallmarks (it is shown in the ["On the inputs"](#inputs)). "Cellout.txt" has information about dynamics of cell evolution and all variabls. 
+
+In the **"User-Guide-analysis"** file it is explained how to run additional functions to analyse the output data, to calculate and to plot dependencies: 
+
+- "Order_of_dysfunction.txt" has information about order of gene dysfunction during evolution.
+- "VAF.txt" file has information about variant allele frequencies for each gene and each site in the genes, which were mutated. 
+- the folder "Figures/" has many plots.
+
+Note the program has two different procedure in general: the first is simulation and the second is an analysis of simulation. 
+
+## Content of "log.txt" file
+File **"log.txt"** contents information about probabilities and file's names. These variables are explained in the ["On the inputs"](#inputs). 
+
+```{r, echo=FALSE, results='asis'}
+x <- read.csv(file = "tugHall/Output/log.txt",header = FALSE, sep = "\t", nrows = 20, col.names = c("Variable","Value"))
+x[is.na(x)] <- ""
+knitr::kable(x, align = "c", caption = "**Table 3. log.txt file.** Example of log.txt file with output information about parameters of the simulation.")
+```
+
+
+## Content of "geneout.txt" file
+File **"geneout.txt"** contents information about weights between hallmarks and genes, which are defined by user. These variables also are explained in the ["On the inputs"](#inputs). 
+
+```{r, echo=FALSE, results='asis'}
+x <- read.csv(file = "tugHall/Output/geneout.txt",header = FALSE, sep = "\t", nrows = 10, col.names = c("Gene_name","Hallmark_name", "Weight", "Suppressor_or_oncogene"))
+x[is.na(x)] <- ""
+knitr::kable(x, align = "c", caption = "**Table 4. geneout.txt file.** Example of geneout.txt file with output information about the weights between hallmark and genes.")
+```
+
+
+## Content of "cellout.txt" file
+
+File **"cellout.txt"** contents the results of simulation and includes the evolution data: all output data for each cell at each timestep (first 10 lines): 
+
+```{r, echo=FALSE, results='asis'}
+x <- read.csv(file = "tugHall/Output/cellout.txt",header = TRUE, sep = "\t", nrows = 10)
+x[is.na(x)] <- ""
+knitr::kable(x, align = "c", caption = "**Table 5. Output data.** Example of output data for all cells. The names of columns are related the description in the Tables 1,2 and Figures 2,3")
+```
+
+1. **Time** - the time step, e.g., 1, 50.
+2. **AvgOrIndx** - "avg" or "index": "avg" is for lines with averaging values, "index" shows the cell's index at the current time step,  e.g., avg, 4,7.
+3. **ID** - the unique ID of cell, e.g., 1, 50.
+4. **ParentID.Birthday** - the first number is the parent ID, the second number is the birthday time step,  e.g., 0:0, 45:5.
+5. **c** - the counter of cell divisions.
+6. **d**  - the value of probability of division for the cell, e.g., 0.1, 0.8.
+7. **i**  - the value of probability of immortalization for the cell, e.g., 0.1, 0.8.
+8. **im**   - the value of probability of invasion/metastasis for the cell, e.g., 0.1, 0.8.
+9. **a**   - the value of probability of apoptosis for the cell, e.g., 0.1, 0.8.
+10. **k**   - the value of probability of death due to the environment for the cell, e.g., 0.1, 0.8.
+11. **E**  - the coefficient for the function of the division probability, e.g., 10^4, 10^5.
+12. **N** - the number of primary tumor cells at this time step, e.g., 134, 5432.
+13. **Nmax** - the maximal number of primary tumor cells for the cell, e.g., 10000, 5000.
+14. **M** - the number of metastasis cells at this time step, e.g., 16, 15439.
+15. **Ha** - the value of the hallmar "Apoptosis" for the cell, e.g., 0.1, 0.4444.
+16. **Him** - the value of the hallmar "Invasion / Metastasis" for the cell, e.g., 0.1, 0.4444.
+17. **Hi** - the value of the hallmar "Immortalization" for the cell, e.g., 0.1, 0.4444.
+18. **Hd** e.g., 0.1, 0.4444 - the value of the hallmar "Growth / Anti-growth" for the cell, e.g., 0.1, 0.4444 .
+19. **Hb** e.g., 0.1, 0.4444 - the value of the hallmar "Angiogenesis" for the cell, e.g., 0.1, 0.4444 .
+20. **type** - the type of the cell: "0" is primary tumor cell, "1" is metastasis cell, e.g., 0, 1.
+21. **mut_den** - the density of the mutation for the cell, e.g., 0, 0.32.
+
+The columns from 22 to 25 are related to names in the form **PosDriver. _gene name_**, where **_gene name_** is related to user defined genes.
+The number of columns equals to the number of genes.
+These columns show the mutational position(s) in a **driver** gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 3493:4, 4531:34.
+
+
+22. **PosDriver.(Gene_1="APC")** - for the first gene.
+23. **PosDriver.(Gene_2="KRAS")** - for the second gene.
+24. **PosDriver.(Gene_...)** - ... 
+25. **PosDriver.(Gene_last="PIK3CA")** - for the last gene.
+
+
+The columns from 26 to 29 are related to names in the form **PosPassngr. _gene name_**, where **_gene name_** is related to user defined genes.
+The number of columns equals to the number of genes.
+These columns show the mutational position(s) in a **passenger** gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 8952:43, 531:4.
+
+26. **PosPassngr.APC** - for the first gene "APC".
+27. **PosPassngr.KRAS** - for the second gene "KRAS".
+28. **PosPassngr.(Gene_...)** - ... 
+29. **PosPassngr.(Gene_last="PIK3CA")** - for the last gene.
+
+<br />
+
+30. **Clone.number** - the clone number is calculated from binary code of mutated genes. For example, if gene is mutated then its value in binary code equal 1, and if no, it is 0. For example, the cells have only 4 genes in simulation, so "Clone.number" can have binary numbers from 0000 to 1111, that is related decimal numbers from 0 to 15, e.g., 15, 4.
+31. **Passengers.Clone.number** - same as for "Clone.number", but for passenger genes,  e.g., 15, 4.
+32. **Mix.Clone.number** - same as for "Clone.number", but for passenger and driver genes together. In this case the length of binary number is two times larger than for driver case, e.g., 35, 16.
+
+---
+
+<a name="run"></a>
+
+#5. How to run 
+
+In order to make the simulation, please, follow next procedure:
+
+1. Copy **/tugHall/** directory into the working directory.
+
+2. CD to the **/tugHall/** directory. 
+
+3. Run **tugHall.R** file, using command line like
+
+`R --vanilla < tugHall.R`
+
+or using **R Studio** with line by line procedure. In this case we have:
+
+  - load *library(stringr)* and *source(file = "Code/tugHall_functions.R")*;
+  - create the Output and Figures directories, if it is needed;
+  - define the parameters of simulation; 
+  - make of the input file for initial cells, if it is needed;
+  - run *model()* function to simulate;
+  - run *source("Code/Analysis.R")* in order to analyse the results and plot figures in the regime of dialogue (see "User-Guide-analysis").
+  
+4. To make report of simulation, please, rename and change "User-Guide-analysis.RMD" (for more details, please, see "Writing reproducible reports in R" on the github https://nicercode.github.io/guides/reports/), which uses the output and input files in **/Input/, /Output/, /Figures/** directories with actual information. For more details, please, see "User-Guide-analysis". 
+
+

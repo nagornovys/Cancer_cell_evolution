@@ -6,7 +6,6 @@ save_fig <- function(file_input) {
   #dev.copy2eps(file = file_input, height = 10, width = 10) 
   dev.copy(jpeg,file_input, width = 10, height = 10, units = 'in', res = 300)
   dev.off()
-  
   par(xpd=TRUE, cex.lab=2, lwd = 2, mar = c(5, 5, 5, 5), tcl = 0.5, cex.axis = 1.75,  mgp = c(3, 0.6, 0))
   
 }
@@ -38,21 +37,22 @@ analyze_data <- function(celloutfile) {
   data_last <<- data_flow[which(data_flow$Time == time_max),]
         
           # let draw graphics 
-          # Numbers of Metastasis and normal cells
+          # Numbers of Metastasis and primary tumor cells
           g_range_y <- range(0, data_avg$N,data_flow$M)
           g_range_x <- range(min(data_avg$Time),max(data_flow$Time))
-          plot(data_avg$Time,data_avg$M,type = "l",xlab = "Generation number",
+          plot(data_avg$Time,data_avg$M,type = "l",xlab = "Time step",
            ylab = "Number of cells",ylim=g_range_y,xlim = g_range_x,col = "red")
           lines(data_avg$Time,data_avg$N,type = "l",col = "blue")
           # g_range_x[1]/2+g_range_x[2]/2.5, 1.2*g_range_y[2]
-          legend(g_range_x[1], 1.15*g_range_y[2], c("Normal","Metastasis"), 
-             lwd=2,cex=1.3,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+          legend(g_range_x[1], 1.15*g_range_y[2], c("Primary tumor","Metastasis"), 
+             lwd=2,cex=1.3,col=c("blue","red"), lty = 1:1,horiz = TRUE, bty = "n")
   #dev.copy(pdf, "Figures/N_cells.pdf")    
   #dev.off()
 
+          save_fig("Figures/N_cells.eps")
   
-  rl <-  readline(prompt="This is a plot for Numbers of Normal and Metastasis cells - Press Enter  ")
-  save_fig("Figures/N_cells.eps")
+  rl <-  readline(prompt="This is a plot for Numbers of primary tumor and Metastasis cells - Press Enter  ")
+
 
   # Average values of probabilities
   g_range_y <- range(0, data_avg[6:10])
@@ -60,48 +60,45 @@ analyze_data <- function(celloutfile) {
   
       
         plot(data_avg$Time,data_avg$d,type = "l", ylim=g_range_y,xlim = g_range_x,
-         xlab = "Generation number",ylab = "Average probabilities",col = "red")
+         xlab = "Time step",ylab = "Average probabilities",col = "red")
     
         lines(data_avg$Time,data_avg$i,type = "l",col = "blue")
         lines(data_avg$Time,data_avg$im,type = "l",col = "green")
         lines(data_avg$Time,data_avg$a,type = "l",col = "orange")
         lines(data_avg$Time,data_avg$k,type = "l",col = "black")
 
-        legend(g_range_x[1], 1.15*g_range_y[2], c("d","i","im","a","k"), cex=1.3,col=c("red","blue","green","orange","black"), lty = 1:1,lwd = 2,horiz = TRUE)
+        legend(g_range_x[1], 1.15*g_range_y[2], c("d","i","im","a","k"), cex=1.3,
+               col=c("red","blue","green","orange","black"), lty = 1:1,lwd = 2,horiz = TRUE, bty = "n")
       
 
         #dev.copy(pdf, "Figures/Probabilities.pdf")    
         #dev.off()
         
+        save_fig("Figures/Probabilities.eps")
         
   rl <-  readline(prompt="This is a plot for Average values of probabilities - Press Enter  ")
- 
-  save_fig("Figures/Probabilities.eps")
-  
+
     # The averaged values of Hallmarks 
     g_range_y <- range(0, data_avg[15:19])
     g_range_x <- range(min(data_avg$Time),max(data_flow$Time))
   
     plot(data_avg$Time,data_avg$Hd,type = "l", ylim=g_range_y,xlim = g_range_x,
-       xlab = "Generation number",ylab = "Averaged Hallmarks values",col = "red")
+       xlab = "Time step",ylab = "Averaged Hallmarks values",col = "red")
   
     lines(data_avg$Time,data_avg$Hi,type = "l",col = "blue",lwd = 2)
     lines(data_avg$Time,data_avg$Him,type = "l",col = "green",lwd = 2)
     lines(data_avg$Time,data_avg$Ha,type = "l",col = "orange",lwd = 2)
     lines(data_avg$Time,data_avg$Hb,type = "l",col = "black",lwd = 2)
 
-    legend(g_range_x[1], 1.15*g_range_y[2], c("Hd","Hi","Him","Ha","Hb"), cex=1.2,col=c("red","blue","green","orange","black"), lty = 1:1,lwd = 2,horiz = TRUE)
+    legend(g_range_x[1], 1.15*g_range_y[2], c("Hd","Hi","Him","Ha","Hb"), cex=1.2,
+           col=c("red","blue","green","orange","black"), lty = 1:1,lwd = 2,horiz = TRUE, bty = "n")
 
 
     #dev.copy(pdf, "Figures/Hallmarks.pdf")    
     #dev.off()
+    save_fig("Figures/Hallmarks.eps")  
   
-  
-  rl <-  readline(prompt="This is a plot for Average values of Hallmarks - Press Enter  ")
-  save_fig("Figures/Hallmarks.eps")
-  
-  rl <-  readline(prompt="This is function to save the order of gene dysfunction to the file `Order_of_dysfunction.txt`  - Press Enter to save and view")
-  # The order of gene dysfunction 
+  rl <-  readline(prompt="This is a plot for Average values of Hallmarks - Press Enter, but next takes a time for calculations")
 
   onco <<- oncogene$new()        # make the vector onco about the hallmarks
   onco$read(genefile)          # read the input info to the onco from genefile - 'gene_cds2.txt'
@@ -148,15 +145,16 @@ analyze_data <- function(celloutfile) {
   #    write_order_of_dysfunction('Order_of_dysfunction.txt', env, cells, isFirst)
 
 
-
   x <- array("",dim = length(order_dysfunction[,1]))
   
   for (i in 1:length(order_dysfunction[,1])) {
     data <- c(names(sort(order_dysfunction[i,2:(length(onco$name)+1)])))
-    x[i] <- paste(data,collapse = " ")
+    x[i] <- paste(data,collapse = " -> ")
   }  
   
   print("The order of gene dysfunction for each cell is saved into the file")
+  print("This is function to save the order of gene dysfunction to the file `Order_of_dysfunction.txt` ")
+  # The order of gene dysfunction 
   
   # find the unique orders of genes dysfunction
   uniq_order <<- table(x)
@@ -342,10 +340,6 @@ calc_tree <- function(evolution_clones, clones, total_clones) {
       
       m <- length(children)
       
-      tree_cl <- rtree(n = m)
-      tree_cl$Nnode <- n 
-      tree_cl$tip.label <- as.character( clone_tree$Clone_ID )
-      
       cl_edge <- data.frame(p=1:m,ch=1:m)
       cl_edge[,] <- -1
       
@@ -372,10 +366,24 @@ calc_tree <- function(evolution_clones, clones, total_clones) {
         } 
       }
       
+      tree_cl <- rtree(n = 2, rooted = TRUE)
+      
+      tree_cl$Nnode <- n 
+      tree_cl$tip.label <- as.character( clone_tree$Clone_ID )
       tree_cl$edge <- as.matrix(cl_edge)
       tree_cl$edge.length <- l_edge
+      attr(tree_cl$edge,"dimnames") <- NULL
+      
+      
 
+      write.tree(tree_cl,file = "null")
+      
+      tree_cl <- read.tree(file = "null")
+      tree_cl$root.edge <- 0.15
+      file.remove("null")
+      
 return(tree_cl)
 }
     
+
 

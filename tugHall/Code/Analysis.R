@@ -1,5 +1,11 @@
 # Diversity of clones
 
+library(stringr)
+
+library(ape)
+library(ggplot2)
+library(ggtree)
+
 par(xpd=TRUE, cex.lab=2, lwd = 2, mar = c(5, 5, 5, 5), tcl = 0.5, cex.axis = 1.75,  mgp = c(3, 0.6, 0))
 
 
@@ -14,9 +20,6 @@ source("Code/Functions.R")
 analyze_data(celloutfile)
 
 # time_max - number of time steps 
-
-
-rl <-  readline(prompt="This is a plot for Dyversity of clones - Press Enter  ")
 
 clones <- matrix(nrow = length(data_flow$Time), ncol = 7)
 clones[,1] <- as.integer(as.character(data_flow$Time))
@@ -58,16 +61,20 @@ plot(1:time_max,diversity[,1],type = "l",col = "blue", lwd=2, ylim=g_range_y, xl
 lines(1:time_max,diversity[,2],type = "l",col = "red", lwd=2)
 
 legend(1, 1.15*g_range_y[2], c("Drivers","Drivers+Passengers"), 
-       lwd=1,cex=1.2,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+       lwd=1,cex=1.2,col=c("blue","red"), lty = 1:1, horiz = TRUE, bty = "n")
 
 
 save_fig("Figures/N_clones.eps")
+
+rl <-  readline(prompt="This is a plot for Number of clones - Press Enter  ")
+
+
 #dev.copy(pdf, "Figures/N_clones.pdf")    
 # dev.copy2eps(file = "Figures/N_clones.eps", height = 10, width = 10) 
 
 # plot(1:time_max,diversity[,2],type = "l",col = "red", lwd=2,xlab = "Time step", ylab = "Normilized diversity") # normalized diversity
 
-rl <-  readline(prompt="This is a plot for Numbers of cells in each clone - Press Enter  ")
+# rl <-  readline(prompt="This is a plot for Numbers of cells in each clone - Press Enter  ")
 
 
 # Number of cells in each clone
@@ -88,30 +95,57 @@ evolution_clones[i,match(names(y),names(evolution_clones))] <- y
 evolution_clones[is.na(evolution_clones)] <- 0
 
 
- library(ape)
  tree_cl <- calc_tree(evolution_clones, clones, total_clones)
 
+ tree_cl$label <- names(table(clone_tree$Parent_ID))
  
- rl <-  readline(prompt="This is a tree plot for  clones - Press Enter  ") 
+ # ggtree(tree_cl) + theme_tree2()
+ 
+ # label_nodes = names(table(clone_tree$Parent_ID))
+ 
+ #p <- ggtree(tree_cl, color="blue", size=1.5, linetype=1)     + 
+#   geom_nodepoint(mapping = NULL, data = NULL, position = "identity", na.rm = FALSE, show.legend = FALSE, color = "red", fill = "red", size = 3, shape=23)   +   
+ #        geom_tippoint(color = "skyblue", size = 3) + 
+  #         geom_tiplab(size = 6) + 
+   #          geom_rootedge(color="blue", size=1.5, linetype=1) 
+
+ 
+ 
+ p <- ggtree(tree_cl, color="blue", size=1.5, linetype=1, ladderize = TRUE)     + 
+   geom_nodepoint(mapping = NULL, data = NULL, position = "identity", na.rm = FALSE, show.legend = FALSE, color = "red", fill = "red", size = 3, shape=23)   +   
+   geom_tippoint(color = "skyblue", size = 3)  
+#    geom_rootedge(color="blue", size=1.5, linetype=1) 
+ 
+ d <- p$data
+ d$label[is.na(d$label)] <- tree_cl$label
+ 
+ 
+ plot( p + geom_text2(data=d, aes(label=label), nudge_x = 0.04, size = 6 )  )
+ 
+
+ save_fig("Figures/ggtree_clones.eps")
+ 
+ rl <-  readline(prompt="This is a ggtree plot for  clones - Press Enter  ") 
   ######## plot TREE:
   # plot(tree_cl, cex = 1.4)
   
+ 
+  ### APE library:
   plotTreeTime(tree_cl, tip.dates = clone_tree$Time_start, show.tip.label = TRUE, label.offset = 0.01 )
   
-  nodelabels(text = names(table(clone_tree$Parent_ID)), frame = "circle")
+  nodelabels(text = tree_cl$label, frame = "circle")
   # tiplabels()
-  #edgelabels()
-  
+  # dgelabels()
   
   save_fig("Figures/Tree_clones.eps")
+ 
+  rl <-  readline(prompt="This is a Time tree plot for  clones - Press Enter  ") 
   
   #dev.copy(pdf, "Figures/Tree_clones.pdf")    
   #dev.off()
   
   
   # to plot all dependeces 
-
-  rl <-  readline(prompt="This is a plot for  number of cells in each clone - Press Enter  ")   
   
 # Make a large number of colors
 
@@ -142,15 +176,16 @@ for (i in 1:w) {
   }  
 }
 
-seq(1,w^3,st) # is consequence of each color to make a high diversity of colors
+# seq(1,w^3,st) # is consequence of each color to make a high diversity of colors
 jColor <- data.frame(number = 1:length(seq(1,w^3,st)),color = rgb(R[seq(1,w^3,st)],G[seq(1,w^3,st)],B[seq(1,w^3,st)]))
 
+print("This is a plot for  number of cells in each clone: ") 
 
 for (ll in 1:2) {
   
   if (ll == 1) g_range_y <- range(0, max(evolution_clones)) else g_range_y <- range(0,100)
 
-  plot(1:time_max,evolution_clones[,1],type = "l",col = jColor$color[1],lwd=3,xlab = "Generation number",
+  plot(1:time_max,evolution_clones[,1],type = "l",col = jColor$color[1],lwd=3,xlab = "Time step",
      ylab = "Number of cells in each clone",ylim=g_range_y)
 
   for (i in 2:total_clones) {
@@ -163,7 +198,7 @@ for (ll in 1:2) {
   if (ll == 1)   save_fig("Figures/N_cells_in_clones_1.eps")    else save_fig("Figures/N_cells_in_clones_2.eps") 
   }
 
-rl <-  readline(prompt="This is a barplot for Numbers of cells in clones at last timestep - Press Enter ")
+rl <-  readline("Press Enter")
 
 # the clones at the last time step
 cl <- clones[which(clones[,1]==time_max),]
@@ -175,7 +210,8 @@ barplot(table(cl[,2]),xlab = "The ID of clone", ylab = "Number of cells in the c
 save_fig("Figures/Barplot_N_cells_in_clones.eps") 
 #dev.copy(pdf, "Figures/Barplot_N_cells_in_clones.pdf")    
 #dev.off()
-rl <-  readline(prompt="This is same barplot for DRIVERS AND PASSENGERS - Press Enter ")
+rl <-  readline(prompt="This is a barplot for Numbers of cells in clones at last timestep - Press Enter ")
+
 
 # Most popular clone (Drivers and Passengers)
 barplot(table(cl[,4]),xlab = "The ID of clone", ylab = "Number of cells in the clone", main = "FOR DRIVERS AND PASSENGERS",
@@ -183,8 +219,8 @@ barplot(table(cl[,4]),xlab = "The ID of clone", ylab = "Number of cells in the c
 save_fig("Figures/Barplot_N_cells_in_clones_DP.eps")
 #dev.copy(pdf, "Figures/Barplot_N_cells_in_clones_DP.pdf")    
 #dev.off()
+rl <-  readline(prompt="This is same barplot for DRIVERS AND PASSENGERS - Press Enter ")
 
-rl <-  readline(prompt="This is a plot for inequality coefficient - Press Enter ")
 
 ineq_clones <- matrix(0,nrow = time_max,ncol = 2)
 
@@ -206,51 +242,55 @@ lines(1:time_max,ineq_clones[,2],type = "l", lwd=3, pch = 19, col =  "red")
 
 # g_range_x[1]/2+g_range_x[2]/2.5, 1.2*g_range_y[2]
 legend(1, 1.15*g_range_y[2], c("Drivers","Drivers+Passengers"), 
-       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1, horiz = TRUE, bty = "n")
 
 save_fig("Figures/Inequality.eps")
 #dev.copy(pdf, "Figures/Inequality.pdf")    
 #dev.off()
+rl <-  readline(prompt="This is a plot for inequality coefficient - Press Enter ")
 
-rl <-  readline(prompt="This is a plot for inequality coefficient for normal cells - Press Enter ")
 
-plot(data_avg$N,ineq_clones[,1],type = "l", lwd=3, pch = 19, col = "blue", ylim = g_range_y, xlab = "Number of normal cells", ylab = "Inequlity coefficient")
+
+plot(data_avg$N,ineq_clones[,1],type = "l", lwd=3, pch = 19, col = "blue", ylim = g_range_y, xlab = "Number of primary tumor cells", ylab = "Inequlity coefficient")
 points(data_avg$N,ineq_clones[,2],type = "l", lwd=3, pch = 19, col =  "red")
 legend(min(data_avg$N)-1, 1.15*g_range_y[2], c("Drivers","Drivers+Passengers"), 
-       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1, horiz = TRUE, bty = "n")
 
-save_fig("Figures/Inequality_normal.eps")
-#dev.copy(pdf, "Figures/Inequality_normal.pdf")    
+save_fig("Figures/Inequality_primary.eps")
+#dev.copy(pdf, "Figures/Inequality_primary.pdf")    
 #dev.off()
 
-rl <-  readline(prompt="This is a plot for inequality coefficient for metastasis cells - Press Enter ")
+rl <-  readline(prompt="This is a plot for inequality coefficient for primary tumor cells - Press Enter ")
+
+
 
 plot(data_avg$M,ineq_clones[,1],type = "l", lwd=3, pch = 19, col = "blue", ylim = g_range_y, xlab = "Number of metastasis cells", ylab = "Inequlity coefficient")
 points(data_avg$M,ineq_clones[,2],type = "l", lwd=3, pch = 19, col =  "red")
 legend(min(data_avg$M), 1.15*g_range_y[2], c("Drivers","Drivers+Passengers"), 
-       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1, horiz = TRUE, bty = "n")
 
 save_fig("Figures/Inequality_metastasis.eps")
 #dev.copy(pdf, "Figures/Inequality_metastasis.pdf")    
 #dev.off()
+rl <-  readline(prompt="This is a plot for inequality coefficient for metastasis cells - Press Enter ")
 
-rl <-  readline(prompt="This is a plot for inequality coefficient for all cells - Press Enter ")
+
 
 plot(data_avg$M+data_avg$N,ineq_clones[,1],type = "l", lwd=3, pch = 19, col = "blue", ylim = g_range_y, xlab = "Number of all cells", ylab = "Inequlity coefficient")
 points(data_avg$M+data_avg$N,ineq_clones[,2],type = "l", lwd=3, pch = 19, col =  "red")
 legend(min(data_avg$M+data_avg$N), 1.15*g_range_y[2], c("Drivers","Drivers+Passengers"), 
-       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1,horiz = TRUE)
+       lwd=2,cex=1.1,col=c("blue","red"), lty = 1:1, horiz = TRUE, bty = "n")
 save_fig("Figures/Inequality_all_cells.eps")
 #dev.copy(pdf, "Figures/Inequality_all_cells.pdf")    
 #dev.off()
+
+rl <-  readline(prompt="This is a plot for inequality coefficient for all cells - Press Enter ")
 
 ##### VAF 
 
 ### data_last has information for all mutations in genes of all cells 
 ### from 22 column         to 21 + length(onco) - for drivers and 
 ### from 22 + length(onco) to 21 + 2*length(onco) for passangers
-
-library(stringr)
 
 
 VAF <- NULL
@@ -343,3 +383,4 @@ header <- c( "DriverPasngr", "Gene", "Position",
 names(VAF) <- header
 write.table(VAF,file = "Output/VAF.txt", append = FALSE, row.names = FALSE, sep="\t")
 
+print("VAF is saved to the file `Output/VAF.txt` ")
