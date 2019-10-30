@@ -39,9 +39,3 @@ Content of package
 Funding
 ---
 This work was supported by CREST-JST (14531766); MEXT (15K06916); and AMED (16ck0106013h0003).
-=======
-
-* _User-Guide.Rmd_ and _User-Guide.html_ are the user guide to install, run and use tugHall simulator in R Markdown and html formats.
-* _/tugHall/_ is a directory with program code, input and output data.
-* _/TESTS/_ is a directory with tests, please, see README_TESTS.md file for explanation.
-* _/ABC/_ is a directory with a simple example of 10000 trials of simulation and approximate Bayesian Computation. For details, please, see README_ABC.md.
