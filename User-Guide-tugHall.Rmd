@@ -335,7 +335,7 @@ These columns show the position(s) of **passenger** mutation(s) in a gene: the f
 
 <a name="run"></a>
 
-# 5. Running the simulation
+# 5. How to run
 
 In order to make the simulation, please follow the procedure:
 
