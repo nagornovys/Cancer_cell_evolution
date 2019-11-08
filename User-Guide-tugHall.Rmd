@@ -243,7 +243,6 @@ The initial states of cells are defined in **"tugHall/Input/cellinit.txt"** file
 1. **Cell ID**  - ID of cell, e.g., 1, 324.
 
 2. **List of mutated genes** - list of mutated genes for each cell, e.g. "", "KRAS, APC". The values are comma separated. The double quotes ("") indicate a cell without mutations.
-Note that in the code **"tugHall.R"**,  the user can make the _**"tugHall/Input/cellinit.txt"**_ file with a list of cells with the same mutated genes.
 
 ---
 

@@ -41,6 +41,7 @@ The programs for the analysis can be run only after the simulation is completed,
 2. [Inputs](#inputs)
 3. [Outputs](#outputs)
 4. [Figures](#figures)
+5. [Relation to experimental measurements](#relation)
 
 
 <a name="quick"></a>
@@ -140,24 +141,6 @@ knitr::kable(x, align = "c", caption = "**Table 2. Variant allele frequencies.**
 
 The directory **Figures/** contains many output figures, generated during the analysis process of **cellout.txt** file, including the evolution of the number of primary tumors and metastasis cells (Fig.1 left), hallmarks (Fig.1 right), and probabilities (Fig.2 left). 
 
-|  Files  | Description  |
-|:---|:---|
-| Barplot_N_cells_in_clones_DP.jpg | Barplot for number of cells in each clone for passengers and drivers |
-| Barplot_N_cells_in_clones.jpg |Barplot for number of cells in each clone for drivers only |
-| Hallmarks.jpg | Time evolution of the average hallmark values |
-| Inequality_all_cells.jpg | Dependence of the inequality coefficient on number of all cells |
-| Inequality_metastasis.jpg | Dependence of the inequality coefficient on number of metastasis cells  |
-| Inequality_primary.jpg | Dependence of the inequality coefficient on number of primary tumor cells  |
-| Inequality.jpg | Time evolution of the inequality coefficient |
-| N_cells_in_clones_1.jpg | Time evolution of number of cells in each clone |
-| N_cells_in_clones_2.jpg | Time evolution of number of cells in each clone using different scale|
-| N_cells.jpg | Time evolution of the number of cells|
-| N_clones.jpg | Time evolution of the number of clones|
-| Probabilities.jpg |Time evolution of probabilities|
-| Tree_clones.jpg | Tree of the clones|
-| ggtree_clones.jpg | Tree of the clones using ggtree package |
-| <img width=200/> | <img width=440/> |
-
 
 <img src="tugHall/Figures/N_cells.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/Hallmarks.jpg" align="middle" width="45%" margin="0 auto" />
 **Fig.1. Results of the simulation: left -** evolution of number of cells, **right -** evolution of hallmarks. Files are *tugHall/Figures/N_cells.jpg* and *tugHall/Figures/Hallmarks.jpg*.
@@ -218,4 +201,23 @@ Figs.6 and 7 show the inequality coefficients (for driver mutated cells and for 
 
 
 --- 
+
+<a name="relation"></a>
+
+# 5. Relation to experimental measurements
+
+We here list variables processed from the tugHall outputs that are related to experimental measurements. 
+
+
+
+|  Variables processed from the simulator outputs  | Relation to experimental measurements  |
+|:---|:---|
+| Number of cells | Observed tumor size. $10^9$ cells correspond to the tumor tissue diameter of 1 cm. $10^{12}$ cells correspond to that of 10 cm. $10^{12}-10^{13}$ cells correspond to lethal burden. See Friberg and Mattson, Journal of Surgical Oncology, 1997. |
+| VAF | VAF calculated from sequence reads in the next-generation sequencer (NGS) under the assumption of 100% tumor purity. |
+| Mutation number per base-pairs | Tumor mutation burden calculated from NGS data. |
+| Number of clones | Number of clones estimated from NGS data by computational tools such as SciClone (Miller et al, PLOS Computational Biology, 2014) and SubClonalSelection (Williams et al, Nature Genetics, 2018). |
+| <img width=200/> | <img width=440/> |
+
+
+
 
