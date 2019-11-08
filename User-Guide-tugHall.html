@@ -13,14 +13,196 @@
 
 
 
-<title>tugHall version 1.1: USER-GUIDE</title>
+<title>tugHall version 1.1: USER-GUIDE-tugHall</title>
 
 
 
 
 
 
-<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#header {
+text-align: center;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
 
 
 
@@ -32,15 +214,15 @@
 
 
 
-<h1 class="title toc-ignore">tugHall version 1.1: USER-GUIDE</h1>
+<h1 class="title toc-ignore">tugHall version 1.1: USER-GUIDE-tugHall</h1>
 
 
 
-<div id="requirements-for-simulation-of-tughall" class="section level2">
-<h2>Requirements for simulation of tugHall:</h2>
+<div id="requirements-for-tughall-simulation" class="section level2">
+<h2>Requirements for tugHall simulation:</h2>
 <p>R version <strong>3.3</strong> or later</p>
 <p>libraries: <strong>stringr</strong></p>
-<p>Note program has two different procedure in general: the first is simulation and the second is an analysis of simulation. This User-Guide is dedicated to the <strong>simulation part</strong> only.</p>
+<p>Note that the program has two different procedures in general: the first is the simulation and the second is the analysis of the simulation results. This User-Guide pertains to the <strong>simulation procedure</strong> alone.</p>
 <p><br /></p>
 </div>
 <div id="table-of-contents" class="section level1">
@@ -48,8 +230,8 @@
 <ol style="list-style-type: decimal">
 <li><a href="#quick">Quick start guide</a></li>
 <li><a href="#directories">Structure of directories</a></li>
-<li><a href="#inputs">On the inputs</a></li>
-<li><a href="#outputs">On the outputs</a></li>
+<li><a href="#inputs">Inputs</a></li>
+<li><a href="#outputs">Outputs</a></li>
 <li><a href="#run">How to run</a></li>
 </ol>
 <p><a name="quick"></a></p>
@@ -58,141 +240,67 @@
 <h1>1. Quick start guide</h1>
 <p>The simplest way to run tugHall:</p>
 <ul>
-<li>save /tugHall/ directory to the working folder;</li>
-<li>run tugHall.R.</li>
+<li>Save the <strong>/tugHall/</strong> directory to the working folder;</li>
+<li>Run <strong>tugHall.R</strong>.</li>
 </ul>
-<p>The code has initial input parameters and input files in /Input/ folder, it runs automatically and after simulation in the regime of dialogue user can see results of simulation (please, see User-Guide-analysis for details), which will save to the /Output/ and /Figures/ folders. Note, for analysis procedure it is needed additional libraries and higher version of R - 3.6.0.</p>
+<p>The code has its initial input parameters and input files in the <strong>/Input/</strong> folder. After the simulation the user can see results of the simulation (please, see <strong>User-Guide-Analysis</strong> for details) in the dialogue box, which will save to the <strong>/Output/</strong> and <strong>/Figures/</strong> folders. Note that the analysis procedure requires additional libraries and a higher version of R - 3.6.0.</p>
 <p><a name="directories"></a></p>
 </div>
 <div id="structure-of-directories" class="section level1">
 <h1>2. Structure of directories</h1>
 <div id="root-directory" class="section level3">
 <h3>Root directory:</h3>
-<p><strong>User-Guide-tugHall.Rmd </strong> - the user guide to make simulation in Rmd format.</p>
-<p><strong>User-Guide-tugHall.html </strong> - the user guide to make simulation in html format.</p>
-<p><strong>User-Guide-analysis.Rmd </strong> - the user guide to make analysis and report in Rmd format.</p>
-<p><strong>User-Guide-analysis.html </strong> - the user guide to make analysis and report in html format.</p>
-<p>dir <strong>/tugHall/ </strong> - the directory with the program.</p>
+<p><strong>User-Guide-tugHall.Rmd</strong> - user guide for simulation in the Rmd format.</p>
+<p><strong>User-Guide-tugHall.html</strong> - user guide for simulation in the html format.</p>
+<p><strong>User-Guide-Analysis.Rmd</strong> - user guide for analysis and report generation in the Rmd format.</p>
+<p><strong>User-Guide-Analysis.html</strong> - user guide analysis and report generation in the html format.</p>
+<p>dir <strong>/tugHall/</strong> - directory that contains the program.</p>
 <p><br /></p>
 </div>
 <div id="tughall-directory" class="section level3">
-<h3>/tugHall/ directory:</h3>
-<p><strong>tugHall.R </strong> - program to run a simulation and define the parameters.</p>
-<p>dir <strong>/Code/ </strong> - the folder with the code and the library of functions.</p>
-<p>dir <strong>/Input/ </strong> - the folder with the input files.</p>
-<p>dir <strong>/Output/ </strong> - the folder with the output files.</p>
-<p>dir <strong>/Figures/ </strong> - the folder with figures of the plots.</p>
+<h3><strong>/tugHall/</strong> directory:</h3>
+<p><strong>tugHall.R</strong> - program to run a simulation and define the parameters.</p>
+<p>dir <strong>/Code/</strong> - folder with the code and the function library.</p>
+<p>dir <strong>/Input/</strong> - folder with the input files.</p>
+<p>dir <strong>/Output/</strong> - folder with the output files.</p>
+<p>dir <strong>/Figures/</strong> - folder with the plot figures.</p>
 <p><br /></p>
 </div>
 <div id="code-directory" class="section level3">
-<h3>/Code/ directory:</h3>
-<p><strong>CanSim.bib, pic_lic.jpg</strong> - the necessesary files for user guide.</p>
-<p><strong>tugHall_functions.R</strong> - the file with the functions for a simulation / core of program.</p>
-<p><strong>Analysis.R</strong> - the file to analyse the results of a simulation and plot figures.</p>
-<p><strong>Functions.R</strong> - the file with the functions for the analysis of results.</p>
+<h3><strong>/Code/</strong> directory:</h3>
+<p><strong>CanSim.bib, pic_lic.jpg</strong> - files necessary files for the user guide.</p>
+<p><strong>tugHall_functions.R</strong> - file that contains the functions for the simulation / core of program.</p>
+<p><strong>Analysis.R</strong> - file to analyze the results of a simulation and plot figures.</p>
+<p><strong>Functions.R</strong> - file with the functions for the analysis of results.</p>
 <p><br /></p>
 </div>
 <div id="input-directory" class="section level3">
-<h3>/Input/ directory:</h3>
-<p><strong>cellinit.txt </strong> - the file with a list of the initial cells with/without destroyed genes.</p>
-<p><strong>gene_cds2.txt</strong> - the file with the halmarks variables and the weights in the format of Table.1.</p>
+<h3><strong>/Input/</strong> directory:</h3>
+<p><strong>cellinit.txt</strong> - file with a list of initial cells with/without destroyed genes.</p>
+<p><strong>gene_cds2.txt</strong> - file with hallmark variables and weights.</p>
 <p><br /></p>
 </div>
 <div id="output-directory" class="section level3">
-<h3>/Output/ directory:</h3>
-<p><strong>cellout.txt</strong> - the file with output of simulation in the format of Table.3 (see below).</p>
-<p><strong>geneout.txt</strong> - the file with information about halmarks variables and the weights.</p>
-<p><strong>log.txt </strong> - the file with information about all parameters.</p>
-<p><strong>Order_of_dysfunction.txt </strong> - the file with an information about order of gene dysfunction during evolution in the format of Table.4 (see below).</p>
-<p><strong>Weights.txt </strong> - the file with information about weights between hallmarks and genes in the format of Table.2.</p>
-<p><strong>VAF.txt </strong> - information about variant allel frequency (VAF) for each gene and each site in the genes in the format of Table.5 (see below).</p>
+<h3><strong>/Output/</strong> directory:</h3>
+<p><strong>cellout.txt</strong> - file with simulation output.</p>
+<p><strong>geneout.txt</strong> - file with information about hallmark variables and the weights.</p>
+<p><strong>log.txt</strong> - file with information about all parameters.</p>
+<p><strong>Weights.txt</strong> - file with information about weights between hallmarks and genes.</p>
+<p><strong>Order_of_dysfunction.txt</strong> - see <strong>USER-GUIDE-Analysis</strong>.</p>
+<p><strong>VAF.txt</strong> - see <strong>USER-GUIDE-Analysis</strong>.</p>
 <p><br /></p>
 </div>
 <div id="figures-directory" class="section level3">
-<h3>/Figures/ directory</h3>
-<p>In the <strong>/Figures/</strong> directory there are 13 figures of the *.jpg format, which appear after analysis of simulation. There are the examples and the descriptions in the “User-Guide-analysis” file:</p>
-<table style="width:14%;">
-<colgroup>
-<col width="6%"></col>
-<col width="6%"></col>
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Files</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Barplot_N_cells_in_clones_DP.jpg</td>
-<td align="left">Barplot for number of cells in each clone for passengers and drivers</td>
-</tr>
-<tr class="even">
-<td align="left">Barplot_N_cells_in_clones.jpg</td>
-<td align="left">Barplot for number of cells in each clone for drivers only</td>
-</tr>
-<tr class="odd">
-<td align="left">Hallmarks.jpg</td>
-<td align="left">Time evolution of the average values of hallmarks</td>
-</tr>
-<tr class="even">
-<td align="left">Inequality_all_cells.jpg</td>
-<td align="left">Dependence of the inequality coefficient on number of all cells</td>
-</tr>
-<tr class="odd">
-<td align="left">Inequality_metastasis.jpg</td>
-<td align="left">Dependence of the inequality coefficient on number of metastasis cells</td>
-</tr>
-<tr class="even">
-<td align="left">Inequality_primary.jpg</td>
-<td align="left">Dependence of the inequality coefficient on number of primary tumor cells</td>
-</tr>
-<tr class="odd">
-<td align="left">Inequality.jpg</td>
-<td align="left">Time evolution of the inequality coefficient</td>
-</tr>
-<tr class="even">
-<td align="left">N_cells_in_clones_1.jpg</td>
-<td align="left">Time evolution of number of cells in each clone</td>
-</tr>
-<tr class="odd">
-<td align="left">N_cells_in_clones_2.jpg</td>
-<td align="left">Time evolution of number of cells in each clone using different scale</td>
-</tr>
-<tr class="even">
-<td align="left">N_cells.jpg</td>
-<td align="left">Time evolution of the number of cells</td>
-</tr>
-<tr class="odd">
-<td align="left">N_clones.jpg</td>
-<td align="left">Time evolution of the number of clones</td>
-</tr>
-<tr class="even">
-<td align="left">Probabilities.jpg</td>
-<td align="left">Time evolution of probabilities</td>
-</tr>
-<tr class="odd">
-<td align="left">Tree_clones.jpg</td>
-<td align="left">Tree of the clones</td>
-</tr>
-<tr class="even">
-<td align="left">ggtree_clones.jpg</td>
-<td align="left">Tree of the clones using ggtree package</td>
-</tr>
-<tr class="odd">
-<td align="left"><img width="200/"></td>
-<td align="left"><img width="440/"></td>
-</tr>
-</tbody>
-</table>
+<h3><strong>/Figures/</strong> directory</h3>
+<p>In the <strong>/Figures/</strong> directory there are figures in *.jpg format, which appear after the analysis of the simulation results. See <strong>USER-GUIDE-Analysis</strong>. :</p>
 <p><a name="inputs"></a></p>
 </div>
 </div>
-<div id="on-the-inputs" class="section level1">
-<h1>3. On the inputs</h1>
-<div id="input-of-the-hallmarks-variables-and-genes-weights" class="section level2">
-<h2>Input of the Hallmarks variables and gene’s weights</h2>
-<p>There is an input file “tugHall/Input/gene_cds2.txt” to define the halmarks variables and weights (first 10 lines):</p>
+<div id="inputs" class="section level1">
+<h1>3. Inputs</h1>
+<div id="input-of-hallmark-variables-and-gene-weights" class="section level2">
+<h2>Input of hallmark variables and gene weights</h2>
+<p>The file <strong>tugHall/Input/gene_cds2.txt</strong> defines the halmark variables and weights (only first 10 lines are presented here):</p>
 <table>
 <caption><strong>Table 1. Input file for genes.</strong> Example of input file for hallmarks and weights in the file <em><strong>tugHall/Input/gene_cds2.txt</strong></em>.</caption>
 <thead>
@@ -278,9 +386,9 @@
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p><strong>Genes</strong> - name of gene, e.g., TP53, KRAS. Note the diversity of names is defined by user, so, please, be carefull with typing of the names. The program detects all unique names of genes.</p></li>
+<li><p><strong>Genes</strong> - name of gene, e.g., TP53, KRAS. The names must be typed carefully. The program detects all the unique gene names.</p></li>
 <li><p><strong>length CDS</strong> - length of CDS for each gene, e.g., 2724, 10804.</p></li>
-<li><strong>Hallmark</strong> - hallmark name, e.g., “apoptosis”. Available names:</li>
+<li><p><strong>Hallmark</strong> - hallmark name, e.g., “apoptosis”. Available names:</p></li>
 </ol>
 <ul>
 <li>apoptosis</li>
@@ -290,7 +398,7 @@
 <li>angiogenesis</li>
 <li>invasion</li>
 </ul>
-<p>Note “growth” and “anti-growth” are related to one hallmark “growth/anti-growth”. Note “invasion” is related to “invasion/metastatsis” hallmark.</p>
+<p>Note that “growth” and “anti-growth” are related to the single hallmark “growth/anti-growth”. Note that “invasion” is related to “invasion/metastasis” hallmark.</p>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Suppressor or oncogene.</strong> - Distinction of oncogene/suppressor:</li>
 </ol>
@@ -300,12 +408,12 @@
 <li>?: unknown (will be randomly assigned)</li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
-<li><strong>Weights</strong> - Hallmark weights or weights for hallmark-genes relations, e.g., 0.333, 0.5. For each hallmark program checks the summation of all weights. If it is not equal 1, then program makes normalization to get unity. Note if the gene belongs to more than one hallmark type, separate it into separate lines.</li>
+<li><strong>Weights</strong> - Hallmark weights for genes, e.g., 0.333 and 0.5. For each hallmark, the program checks the summation of all the weights. If it is not equal to 1, then the program normalizes it to reach unity. Note that, if the gene belongs to more than one hallmark type, it must be separated into separate lines.</li>
 </ol>
 <hr />
-<p>After that the program defines all weights, and all <strong>unknown weights</strong> equal to 0. Note that program makes normalization, so sum of all weights should be equal 1 for each column. User can not define weights in this file, it is final input weights for simulation, which are saved into “tugHall/Output/Weights.txt” file. There are the first 10 lines only:</p>
+<p>After that, the program defines all the weights, and all the <strong>unknown weights</strong> are set equal to 0. Program performs normalization so that the sum of all weights should be equal to 1 for each column. The <strong>tugHall/Output/Weights.txt</strong> file saves these final input weights for the simulation. Only the first 10 lines are presented here:</p>
 <table>
-<caption><strong>Table 2. Weights for hallmarks.</strong> Example of weights for hallmarks and genes from <em><strong>tugHall/Output/Weights.txt</strong></em> file. Unknown values are equal 0.</caption>
+<caption><strong>Table 2. Weights for hallmarks.</strong> Example of weights for hallmarks and genes from <em><strong>tugHall/Output/Weights.txt</strong></em> file. Unknown values equal 0.</caption>
 <thead>
 <tr class="header">
 <th align="center">Genes</th>
@@ -352,22 +460,22 @@
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p><strong>Genes</strong> - name of genes, e.g., TP53, KRAS.</p></li>
-<li><p><strong>Apoptosis, <span class="math inline">\(H_a\)</span></strong> - weights of hallmark “Apoptosis” with genes, e.g., 0.333, 0.5.</p></li>
-<li><p><strong>Angiogenesis, <span class="math inline">\(H_b\)</span></strong> - weights of hallmark “Angiogenesis” with genes, e.g., 0.333, 0.5.</p></li>
-<li><p><strong>Growth / Anti-growth, <span class="math inline">\(H_d\)</span></strong> - weights of hallmark “Growth / Anti-growth” with genes, e.g., 0.333, 0.5.</p></li>
-<li><p><strong>Immortalization, <span class="math inline">\(H_i\)</span></strong> - weights of hallmark “Immortalization” with genes, e.g., 0.333, 0.5.</p></li>
-<li><p><strong>Invasion / Metastasis, <span class="math inline">\(H_{im}\)</span></strong> - weights of hallmark “Invasion / Metastasis” with genes, e.g., 0.333, 0.5.</p></li>
+<li><p><strong>Genes</strong> - name of genes.</p></li>
+<li><p><strong>Apoptosis, <span class="math inline">\(H_a\)</span></strong> - weights of hallmark “Apoptosis”.</p></li>
+<li><p><strong>Angiogenesis, <span class="math inline">\(H_b\)</span></strong> - weights of hallmark “Angiogenesis”.</p></li>
+<li><p><strong>Growth / Anti-growth, <span class="math inline">\(H_d\)</span></strong> - weights of hallmark “Growth / Anti-growth”.</p></li>
+<li><p><strong>Immortalization, <span class="math inline">\(H_i\)</span></strong> - weights of hallmark “Immortalization”.</p></li>
+<li><p><strong>Invasion / Metastasis, <span class="math inline">\(H_{im}\)</span></strong> - weights of hallmark “Invasion / Metastasis”.</p></li>
 </ol>
 <hr />
 </div>
 <div id="input-the-probabilities" class="section level2">
 <h2>Input the probabilities</h2>
-<p>The all probabilities and the functional dependences are defined in the model description. The input of probabilities is possible in the code <strong>“tugHall.R”</strong>:</p>
+<p>The input of the probabilities used in the model is possible in the code for parameter value settings, <strong>“tugHall.R”</strong>:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">Probability variable and it’s value</th>
+<th align="left">Probability variable and value</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -382,7 +490,7 @@
 </tr>
 <tr class="odd">
 <td align="left"><strong>m &lt;- 1E-6</strong></td>
-<td align="left">Mutation probability <span class="math inline">\(m'\)</span></td>
+<td align="left">Mutation probability <span class="math inline">\(m&#39;\)</span></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>uo &lt;- 0.5</strong></td>
@@ -398,7 +506,7 @@
 </tr>
 <tr class="odd">
 <td align="left"><strong>k &lt;- 0.1</strong></td>
-<td align="left">Environmental death probability <span class="math inline">\(k'\)</span></td>
+<td align="left">Environmental death probability <span class="math inline">\(k&#39;\)</span></td>
 </tr>
 <tr class="even">
 <td align="left"><img width="250/"></td>
@@ -408,17 +516,17 @@
 </table>
 <hr />
 </div>
-<div id="input-of-the-files-names" class="section level2">
-<h2>Input of the file’s names</h2>
+<div id="filename-input" class="section level2">
+<h2>Filename input</h2>
 <p>Also in the code <strong>“tugHall.R”</strong> user can define names of input and output files, and additional parameters of simulation:</p>
-<table style="width:14%;">
+<table>
 <colgroup>
-<col width="6%"></col>
-<col width="6%"></col>
+<col width="50%"></col>
+<col width="50%"></col>
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Variables and the file names</th>
+<th align="left">Variables and file names</th>
 <th align="left">Description</th>
 </tr>
 </thead>
@@ -433,14 +541,14 @@
 </tr>
 <tr class="odd">
 <td align="left"><strong>geneoutfile &lt;- ‘geneout.txt’</strong></td>
-<td align="left">Gene Out file with Hallmarks</td>
+<td align="left">Gene Out file with hallmarks</td>
 </tr>
 <tr class="even">
-<td align="left"><strong>celloutfile &lt;- ‘cellout.txt’ </strong></td>
+<td align="left"><strong>celloutfile &lt;- ‘cellout.txt’</strong></td>
 <td align="left">Output information of simulation</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>logoutfile &lt;- ‘log.txt’ </strong></td>
+<td align="left"><strong>logoutfile &lt;- ‘log.txt’</strong></td>
 <td align="left">Log file to save the input information of simulation</td>
 </tr>
 <tr class="even">
@@ -448,7 +556,7 @@
 <td align="left">Max cell number where the program forcibly stops</td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>censore_t &lt;- 200 </strong></td>
+<td align="left"><strong>censore_t &lt;- 200</strong></td>
 <td align="left">Max time where the program forcibly stops</td>
 </tr>
 <tr class="even">
@@ -461,7 +569,7 @@
 </div>
 <div id="input-of-the-initial-cells" class="section level2">
 <h2>Input of the initial cells</h2>
-<p>There is a possibility to define initial cells in <em><strong>“tugHall/Input/cellinit.txt”</strong></em> file with definition of the genes for each cell, which are mutated:</p>
+<p>The initial states of cells are defined in <strong>“tugHall/Input/cellinit.txt”</strong> file:</p>
 <table>
 <thead>
 <tr class="header">
@@ -472,7 +580,7 @@
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="left">“”</td>
+<td align="left">&quot;&quot;</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
@@ -496,7 +604,7 @@
 </tr>
 <tr class="odd">
 <td align="left">1000</td>
-<td align="left">“”</td>
+<td align="left">&quot;&quot;</td>
 </tr>
 <tr class="even">
 <td align="left"><img width="50/"></td>
@@ -505,28 +613,21 @@
 </tbody>
 </table>
 <ol style="list-style-type: decimal">
-<li><p><strong>Cell ID</strong> - number or ID of cell, e.g., 1, 324.</p></li>
-<li><p><strong>List of mutated genes</strong> - list of mutated genes for each cell, e.g. “”, “KRAS, APC”. Comma separated. The “” means primary cell without mutations. Note in the code <strong>“tugHall.R”</strong> user can make <em><strong>“tugHall/Input/cellinit.txt”</strong></em> file with a list of cell with the same mutated genes.</p></li>
+<li><p><strong>Cell ID</strong> - ID of cell, e.g., 1, 324.</p></li>
+<li><p><strong>List of mutated genes</strong> - list of mutated genes for each cell, e.g. &quot;“,”KRAS, APC“. The values are comma separated. The double quotes (”&quot;) indicate a cell without mutations. Note that in the code <strong>“tugHall.R”</strong>, the user can make the <em><strong>“tugHall/Input/cellinit.txt”</strong></em> file with a list of cells with the same mutated genes.</p></li>
 </ol>
 <hr />
 <p><a name="outputs"></a></p>
 </div>
 </div>
-<div id="on-the-outputs" class="section level1">
-<h1>4. On the outputs</h1>
-<p>Output data content several files after simulation. The “log.txt” and “geneout.txt” files have copied input information about variables and gene names. “Weights.txt” has information about weights of genes for hallmarks (it is shown in the <a href="#inputs">“On the inputs”</a>). “Cellout.txt” has information about dynamics of cell evolution and all variabls.</p>
-<p>In the <strong>“User-Guide-analysis”</strong> file it is explained how to run additional functions to analyse the output data, to calculate and to plot dependencies:</p>
-<ul>
-<li>“Order_of_dysfunction.txt” has information about order of gene dysfunction during evolution.</li>
-<li>“VAF.txt” file has information about variant allele frequencies for each gene and each site in the genes, which were mutated.</li>
-<li>the folder “Figures/” has many plots.</li>
-</ul>
-<p>Note the program has two different procedure in general: the first is simulation and the second is an analysis of simulation.</p>
-<div id="content-of-log.txt-file" class="section level2">
-<h2>Content of “log.txt” file</h2>
-<p>File <strong>“log.txt”</strong> contents information about probabilities and file’s names. These variables are explained in the <a href="#inputs">“On the inputs”</a>.</p>
+<div id="outputs" class="section level1">
+<h1>4. Outputs</h1>
+<p>The output data consists of several files after the simulation. The “log.txt” and “geneout.txt” files contain the input information about variables and gene names. “Weights.txt” has information about the weights of genes for hallmarks (Please refer the section <a href="#inputs">“Inputs”</a>). “Cellout.txt” has information about the dynamics of cell evolution and all variables.</p>
+<div id="log.txt-file" class="section level2">
+<h2>“log.txt” file</h2>
+<p>The file <strong>“log.txt”</strong> contains information about probabilities and file names. These variables are explained in the <a href="#inputs">“Inputs”</a>.</p>
 <table>
-<caption><strong>Table 3. log.txt file.</strong> Example of log.txt file with output information about parameters of the simulation.</caption>
+<caption><strong>Table 3. log.txt file.</strong> Example of log.txt file.</caption>
 <thead>
 <tr class="header">
 <th align="center">Variable</th>
@@ -593,11 +694,11 @@
 </tbody>
 </table>
 </div>
-<div id="content-of-geneout.txt-file" class="section level2">
-<h2>Content of “geneout.txt” file</h2>
-<p>File <strong>“geneout.txt”</strong> contents information about weights between hallmarks and genes, which are defined by user. These variables also are explained in the <a href="#inputs">“On the inputs”</a>.</p>
+<div id="geneout.txt-file" class="section level2">
+<h2>“geneout.txt” file</h2>
+<p>The file <strong>“geneout.txt”</strong> contains input information about the weights that connect the hallmarks and genes, which are defined by the user. These variables also are explained in the <a href="#inputs">“Inputs”</a>.</p>
 <table>
-<caption><strong>Table 4. geneout.txt file.</strong> Example of geneout.txt file with output information about the weights between hallmark and genes.</caption>
+<caption><strong>Table 4. geneout.txt file.</strong> Given below is an example of the geneout.txt file.</caption>
 <thead>
 <tr class="header">
 <th align="center">Gene_name</th>
@@ -670,11 +771,11 @@
 </tbody>
 </table>
 </div>
-<div id="content-of-cellout.txt-file" class="section level2">
-<h2>Content of “cellout.txt” file</h2>
-<p>File <strong>“cellout.txt”</strong> contents the results of simulation and includes the evolution data: all output data for each cell at each timestep (first 10 lines):</p>
+<div id="cellout.txt-file" class="section level2">
+<h2>“cellout.txt” file</h2>
+<p>The file <strong>“cellout.txt”</strong> contains the results of the simulation and includes the evolution data: all the output data for each cell at each timestep (only the first 10 lines are presented):</p>
 <table>
-<caption><strong>Table 5. Output data.</strong> Example of output data for all cells. The names of columns are related the description in the Tables 1,2 and Figures 2,3</caption>
+<caption><strong>Table 5. Output data.</strong> Example of output data for all cells. The names of columns are related to the description in the Tables 1,2 and <em>USER-GUIDE-Analysis</em>’s figures.</caption>
 <thead>
 <tr class="header">
 <th align="center">Time</th>
@@ -1056,71 +1157,71 @@
 </table>
 <ol style="list-style-type: decimal">
 <li><strong>Time</strong> - the time step, e.g., 1, 50.</li>
-<li><strong>AvgOrIndx</strong> - “avg” or “index”: “avg” is for lines with averaging values, “index” shows the cell’s index at the current time step, e.g., avg, 4,7.</li>
+<li><strong>AvgOrIndx</strong> - “avg” or “index”: “avg” is for a line with averaged values across different (index) lines at the same time step; “index” shows the cell’s index at the current time step, e.g., avg, 4,7.</li>
 <li><strong>ID</strong> - the unique ID of cell, e.g., 1, 50.</li>
 <li><strong>ParentID.Birthday</strong> - the first number is the parent ID, the second number is the birthday time step, e.g., 0:0, 45:5.</li>
-<li><strong>c</strong> - the counter of cell divisions.</li>
-<li><strong>d</strong> - the value of probability of division for the cell, e.g., 0.1, 0.8.</li>
-<li><strong>i</strong> - the value of probability of immortalization for the cell, e.g., 0.1, 0.8.</li>
-<li><strong>im</strong> - the value of probability of invasion/metastasis for the cell, e.g., 0.1, 0.8.</li>
-<li><strong>a</strong> - the value of probability of apoptosis for the cell, e.g., 0.1, 0.8.</li>
-<li><strong>k</strong> - the value of probability of death due to the environment for the cell, e.g., 0.1, 0.8.</li>
-<li><strong>E</strong> - the coefficient for the function of the division probability, e.g., 10^4, 10^5.</li>
+<li><strong>c</strong> - the counter of cell divisions for the cell.</li>
+<li><strong>d</strong> - the probability of division for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>i</strong> - the probability of immortalization for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>im</strong> - the probability of invasion/metastasis for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>a</strong> - the probability of apoptosis for the cell, e.g., 0.1, 0.8.</li>
+<li><strong>k</strong> - the probability of death due to the environment, e.g., 0.1, 0.8.</li>
+<li><strong>E</strong> - the E coefficient for the function of the division probability, e.g., 10^4, 10^5.</li>
 <li><strong>N</strong> - the number of primary tumor cells at this time step, e.g., 134, 5432.</li>
-<li><strong>Nmax</strong> - the maximal number of primary tumor cells for the cell, e.g., 10000, 5000.</li>
+<li><strong>Nmax</strong> - the theoretically maximal number of primary tumor cells, e.g., 10000, 5000.</li>
 <li><strong>M</strong> - the number of metastasis cells at this time step, e.g., 16, 15439.</li>
-<li><strong>Ha</strong> - the value of the hallmar “Apoptosis” for the cell, e.g., 0.1, 0.4444.</li>
-<li><strong>Him</strong> - the value of the hallmar “Invasion / Metastasis” for the cell, e.g., 0.1, 0.4444.</li>
-<li><strong>Hi</strong> - the value of the hallmar “Immortalization” for the cell, e.g., 0.1, 0.4444.</li>
-<li><strong>Hd</strong> e.g., 0.1, 0.4444 - the value of the hallmar “Growth / Anti-growth” for the cell, e.g., 0.1, 0.4444 .</li>
-<li><strong>Hb</strong> e.g., 0.1, 0.4444 - the value of the hallmar “Angiogenesis” for the cell, e.g., 0.1, 0.4444 .</li>
-<li><strong>type</strong> - the type of the cell: “0” is primary tumor cell, “1” is metastasis cell, e.g., 0, 1.</li>
-<li><strong>mut_den</strong> - the density of the mutation for the cell, e.g., 0, 0.32.</li>
+<li><strong>Ha</strong> - the value of the hallmark “Apoptosis” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Him</strong> - the value of the hallmark “Invasion / Metastasis” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Hi</strong> - the value of the hallmark “Immortalization” for the cell, e.g., 0.1, 0.4444.</li>
+<li><strong>Hd</strong> - the value of the hallmark “Growth / Anti-growth” for the cell, e.g., 0.1, 0.4444 .</li>
+<li><strong>Hb</strong> - the value of the hallmark “Angiogenesis” for the cell, e.g., 0.1, 0.4444 .</li>
+<li><strong>type</strong> - the type of the cell: “0” is primary tumor cell, “1” is the metastatic cell, e.g., 0, 1.</li>
+<li><strong>mut_den</strong> - the density of mutations (tumor mutation burden) for the cell, e.g., 0, 0.32.</li>
 </ol>
-<p>The columns from 22 to 25 are related to names in the form <strong>PosDriver. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals to the number of genes. These columns show the mutational position(s) in a <strong>driver</strong> gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 3493:4, 4531:34.</p>
+<p>The columns from 22 to 25 are related to names in the form <strong>PosDriver. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals the number of the genes. These columns show the position(s) of driver mutation(s) in a gene: the first number is the mutational site on the gene and the second number is the time step of the mutation, e.g., 3493:4, 4531:34.</p>
 <ol start="22" style="list-style-type: decimal">
 <li><strong>PosDriver.(Gene_1=“APC”)</strong> - for the first gene.</li>
 <li><strong>PosDriver.(Gene_2=“KRAS”)</strong> - for the second gene.</li>
 <li><strong>PosDriver.(Gene_…)</strong> - …</li>
 <li><strong>PosDriver.(Gene_last=“PIK3CA”)</strong> - for the last gene.</li>
 </ol>
-<p>The columns from 26 to 29 are related to names in the form <strong>PosPassngr. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals to the number of genes. These columns show the mutational position(s) in a <strong>passenger</strong> gene: the first number is the site on the gene and the second number is the time step of mutation, e.g., 8952:43, 531:4.</p>
+<p>The columns from 26 to 29 are related to names in the form <strong>PosPassngr. <em>gene name</em></strong>, where <strong><em>gene name</em></strong> is related to user defined genes. The number of columns equals the number of the genes. These columns show the position(s) of <strong>passenger</strong> mutation(s) in a gene: the first number is the mutational site on the gene and the second number is the time step of the mutation, e.g., 8952:43, 531:4.</p>
 <ol start="26" style="list-style-type: decimal">
-<li><strong>PosPassngr.APC</strong> - for the first gene “APC”.</li>
-<li><strong>PosPassngr.KRAS</strong> - for the second gene “KRAS”.</li>
+<li><strong>PosPassngr.(Gene_1=“APC”)</strong> - for the first gene.</li>
+<li><strong>PosPassngr.(Gene_2=“KRAS”)</strong> - for the second gene.</li>
 <li><strong>PosPassngr.(Gene_…)</strong> - …</li>
 <li><strong>PosPassngr.(Gene_last=“PIK3CA”)</strong> - for the last gene.</li>
 </ol>
 <p><br /></p>
 <ol start="30" style="list-style-type: decimal">
-<li><strong>Clone.number</strong> - the clone number is calculated from binary code of mutated genes. For example, if gene is mutated then its value in binary code equal 1, and if no, it is 0. For example, the cells have only 4 genes in simulation, so “Clone.number” can have binary numbers from 0000 to 1111, that is related decimal numbers from 0 to 15, e.g., 15, 4.</li>
-<li><strong>Passengers.Clone.number</strong> - same as for “Clone.number”, but for passenger genes, e.g., 15, 4.</li>
-<li><strong>Mix.Clone.number</strong> - same as for “Clone.number”, but for passenger and driver genes together. In this case the length of binary number is two times larger than for driver case, e.g., 35, 16.</li>
+<li><strong>Clone.number</strong> - the clone number is calculated from the binary code of driver mutations. If a gene is mutated, then its binary code value is 1, and if not, it is 0. For example, the cells have only 4 genes in simulation, so “Clone.number” can have binary numbers from 0000 to 1111, which is related decimal numbers from 0 to 15, e.g., 15, 4.</li>
+<li><strong>Passengers.Clone.number</strong> - same as for “Clone.number”, but for passenger mutations, e.g., 15, 4.</li>
+<li><strong>Mix.Clone.number</strong> - same as for “Clone.number”, but for passenger and driver mutations together. In this case, the length of the binary number is two times larger than for the driver case, e.g., 35, 16.</li>
 </ol>
 <hr />
 <p><a name="run"></a></p>
 </div>
 </div>
-<div id="how-to-run" class="section level1">
-<h1>5. How to run</h1>
-<p>In order to make the simulation, please, follow next procedure:</p>
+<div id="running-the-simulation" class="section level1">
+<h1>5. Running the simulation</h1>
+<p>In order to make the simulation, please follow the procedure:</p>
 <ol style="list-style-type: decimal">
 <li><p>Copy <strong>/tugHall/</strong> directory into the working directory.</p></li>
 <li><p>CD to the <strong>/tugHall/</strong> directory.</p></li>
-<li><p>Run <strong>tugHall.R</strong> file, using command line like</p></li>
+<li><p>Run the <strong>tugHall.R</strong> file, using the command line like</p></li>
 </ol>
 <p><code>R --vanilla &lt; tugHall.R</code></p>
-<p>or using <strong>R Studio</strong> with line by line procedure. In this case we have:</p>
+<p>or using the line by line procedure in <strong>R Studio</strong>. In this case we have:</p>
 <ul>
-<li>load <em>library(stringr)</em> and <em>source(file = “Code/tugHall_functions.R”)</em>;</li>
-<li>create the Output and Figures directories, if it is needed;</li>
-<li>define the parameters of simulation;</li>
-<li>make of the input file for initial cells, if it is needed;</li>
-<li>run <em>model()</em> function to simulate;</li>
-<li>run <em>source(“Code/Analysis.R”)</em> in order to analyse the results and plot figures in the regime of dialogue (see “User-Guide-analysis”).</li>
+<li><strong><code>load library(stringr)</code></strong> and <strong><code>source(file = &quot;Code/tugHall_functions.R&quot;)</code></strong>;</li>
+<li>create the Output and Figures directories, if needed;</li>
+<li>define the simulation parameters;</li>
+<li>make the input file for initial cells, if needed;</li>
+<li>run the <em>model()</em> function to simulate;</li>
+<li>run <strong><code>source(&quot;Code/Analysis.R&quot;)</code></strong> in order to analyze the results and plot the figures in the dialogue box (see <strong>User-Guide-Analysis</strong>).</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li>To make report of simulation, please, rename and change “User-Guide-analysis.RMD” (for more details, please, see “Writing reproducible reports in R” on the github <a href="https://nicercode.github.io/guides/reports/" class="uri">https://nicercode.github.io/guides/reports/</a>), which uses the output and input files in <strong>/Input/, /Output/, /Figures/</strong> directories with actual information. For more details, please, see “User-Guide-analysis”.</li>
+<li>To make a report of the simulation, rename and change the <strong>User-Guide-Analysis.RMD</strong> (for more details, please, see “Writing reproducible reports in R” on the github <a href="https://nicercode.github.io/guides/reports/" class="uri">https://nicercode.github.io/guides/reports/</a>), which uses the output and input files in <strong>/Input/</strong>, <strong>/Output/</strong>, <strong>/Figures/</strong> directories that contain actual information. For more details, please, see <strong>User-Guide-Analysis</strong>.</li>
 </ol>
 </div>
 

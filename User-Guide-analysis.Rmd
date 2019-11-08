@@ -1,5 +1,5 @@
 ---
-title: "tugHall v 1.1: USER-GUIDE-ANALYSIS"
+title: "tugHall v 1.1: USER-GUIDE-Analysis"
 #author: "Iurii Nagornov and Mamoru Kato"
 ## date: "`r Sys.Date()`"
 bibliography: tugHall/Code/CanSim.bib
@@ -26,62 +26,62 @@ Sys.setenv("TimeZone" = "Japan")
 ```
 
 
-##Requeirements
+## Requirements
 
 R version **3.6**
 
 libraries: **stringr, ape, ggplot2, ggtree** 
 
-Note program has two different procedure in general: the first is simulation and the second is an analysis of simulation. 
-This User-Guide is dedicated to the **analysis** part only.
-This part of program can work only after simulation, when in **tugHall/Output/** folder the **cellout.txt** file exists. 
+Note that the program comprises two different procedures in general: the first is simulation and the second is the analysis of the simulation results. 
+This User-Guide pertains to the **analysis** alone.
+The programs for the analysis can be run only after the simulation is completed, and the **cellout.txt** file exists in the **tugHall/Output/** folder. 
 
 # Table of Contents
 1. [Quick start guide](#quick)
-2. [On the inputs](#inputs)
-3. [On the outputs](#outputs)
+2. [Inputs](#inputs)
+3. [Outputs](#outputs)
 4. [Figures](#figures)
 
 
 <a name="quick"></a>
 
-#1. Quick start guide 
+# 1. Quick start guide 
 
-To perform a simulation, please, see **User-Guide-tugHall** file. After simulation there is **tugHall/Output/cellout.txt** file, which is used to analyse the cells evolution. Also some functions and objects are used after simulation, so please, load **.RData** file saved after simulation, if it is needed. 
+To perform the simulation, kindly see the **User-Guide-tugHall** file. After the simulation the file **tugHall/Output/cellout.txt** is generated, which is used to analyze the evolution of cells. Also, since the functions and objects are used after the simulation, the **.RData** file saved after the simulation must be loaded, if required. 
 
-The simplest way to analyze results after simulation:
+The simplest way to analyze the results after simulation:
 
 - open R;
-- make the working directory to "tugHall/";
-- load .RData;
-- source("Code/Analysis.R").
+- set **tugHall/** as the working directory;
+- load **.RData**;
+- `source("Code/Analysis.R")`.
 
-The code has initial input parameters and input files in /Input/ folder to define names of genes. 
-In the regime of dialogue user can see results of simulation, which will save to the /Output/ and /Figures/ folders. 
+The code has initial input parameters and input files in the **/Input/** folder to define the names of the genes. 
+In the dialogue box, the user can see the results of the simulation, which will be saved to the **/Output/** and **/Figures/** folders. 
 
 <a name="inputs"></a>
 
-#2. On the inputs 
+# 2. Inputs 
 
-To analyze the output data user has to get results of simulation in the **tugHall/Output/cellout.txt** file and the functions and objects of simulations should be present in the enveronment of R. 
-That is why the **cellout.txt** file is input file for the analysis. 
-To get detailed information on it, please, see **User-Guide-tugHall** section "On the outputs".
+To analyze the output data, the user has to obtain the results of the simulation in the **tugHall/Output/cellout.txt** file and the functions and objects of simulations should be present in the R environment. 
+That is why the **cellout.txt** file is the input file for the analysis. 
+For detailed information, kindly see the "Outputs" section in **User-Guide-tugHall**.
 
 
 
 <a name="outputs"></a>
 
-#3. On the outputs 
+# 3. Outputs 
 
-Output data content several files and many figures:
+Output data contain several files and figures:
 
-- "Order_of_dysfunction.txt" has information about order of gene dysfunction during evolution. 
-- "VAF.txt" file has information about variant allele frequencies for each gene and each site in the genes, which were mutated. 
-- the folder "tugHall/Figures/" has many plots (see  [Figures](#figures)).
+- **Order_of_dysfunction.txt** has information about the order of gene dysfunction during evolution. 
+- **VAF.txt** file has information about the variant allele frequencies (VAFs) for each gene and each site in the genes.
+- the folder **tugHall/Figures/** has many plots (see [Figures](#figures)).
 
-### "Order_of_dysfunction.txt" file
+### **Order_of_dysfunction.txt** file
 
-**"tugHall/Output/Order_of_dysfunction.txt"** has information about order of gene dysfunction during evolution in the next format (first 10 lines):
+**tugHall/Output/Order_of_dysfunction.txt** has information about the order of gene dysfunction during evolution in the next format (only first 10 lines are presented here):
 
 ```{r, echo=FALSE, results='asis'}
 x <- read.csv(file = "tugHall/Output/Order_of_dysfunction.txt",header = TRUE, sep = "\t", nrows = 10)
@@ -90,14 +90,14 @@ names(x) <- c("Order of gene dysfunction","Number of cells")
 knitr::kable(x, align = "c", caption = "**Table 1. Order of gene dysfunction.**")
 ```
 
-1. **Order of gene dysfunction.** Order of gene dysfunctionis is the list of gene's names in the order of mutations - from first to last. Blank line is related to the cells without dysfunction.
-2. **Number of cells.** The number of cell is number of cells in the pool with same order. 
+1. **Order of gene dysfunction.** Order of gene dysfunctionis is the list of gene names in the order of mutations - from first to last by left to right. The blank line is related to the cells without dysfunction.
+2. **Number of cells.** This is the number of cells in the pool with the same order. 
 
 ---
 
-### "VAF.txt" file
+### **VAF.txt** file
 
-**"tugHall/Output/VAF.txt"** file has information about variant allele frequencies (VAF) for each gene and each site in the genes, which were mutated (first 10 lines):
+**tugHall/Output/VAF.txt** file has information about the VAFs for each gene and each site in the genes (first 10 lines):
 
 ```{r, echo=FALSE, results='asis'}
 x <- read.table(file = "tugHall/Output/VAF.txt",header = TRUE, sep = "\t", nrows = 10)
@@ -106,25 +106,25 @@ knitr::kable(x, align = "c", caption = "**Table 2. Variant allele frequencies.**
 ```
 
 
-1. **DriverPasngr** - D or P are indicated the distinction between Driver and Passenger genes.
+1. **DriverPasngr** - D or P indicate the distinction between the Driver and Passenger genes.
 
 2. **Gene** - name of gene, e.g. TP53, KRAS.
 
-3. **Position** - position at mutated site in gene,  e.g. 123, 1028.
+3. **Position** - position at mutated site in the gene,  e.g. 123, 1028.
 
-4. **VAF_Primary** - VAF for Primary cells = half of N_mutated_Primary / N_Primary cells, e.g. 0.2.
+4. **VAF_Primary** - VAF for cells in the primary tumor = half of Ncells_Primary_wMutation / Ncells_Primary, e.g. 0.2.
 
-5. **Ncells_Primary_wMutation** - number of Primary mutated cells N_mutated_Primary, e.g. , 40.
+5. **Ncells_Primary_wMutation** - number of primary-tumor cells, e.g. , 40.
 
-6. **Ncells_Primary** - number of Primary cells, e.g. 100.
+6. **Ncells_Primary** - number of primary-tumor cells, e.g. 100.
 
-7. **VAF_Metastatic** VAF for Metastatic cells = half of N_mutated_Metastatic / N_Metastatic, e.g. 0.35. 
+7. **VAF_Metastatic** VAF for metastatic cells = half of Ncells_Metastatic_wMutation / Ncells_Metastatic, e.g. 0.35. 
 
-8. **Ncells_Metastatic_wMutation** number of Metastatic mutated cells N_mutated_Metastatic, e.g. 70.
+8. **Ncells_Metastatic_wMutation** = number of metastatic cells with the mutation, e.g. 70.
 
-9. **Ncells_Metastatic** number of Metastatic cells N_Metastatic, e.g. 100.
+9. **Ncells_Metastatic** = number of metastatic cells, e.g. 100.
 
-10. **VAF_PriMet** VAF for all cells = half of N_mutated_cells / N_all, e.g. 0.275 
+10. **VAF_PriMet** VAF for all cells = half of Ncells_PriMet_wMutation / Ncells_PriMet, e.g. 0.275 
 
 11. **Ncells_PriMet_wMutation** number of all mutated cells, e.g. 110.
 
@@ -136,50 +136,69 @@ knitr::kable(x, align = "c", caption = "**Table 2. Variant allele frequencies.**
 
 <a name="figures"></a>
 
-#4. Figures 
+# 4. Figures 
 
-The directory "Figures/" contents many output figures, generated during analysis process of "cellout.txt" file, including evolutions of number of primary tumor and metastasys cells (Fig.1 left), hallmarks (Fig.1 right) and probabilities (Fig.2 left). 
+The directory **Figures/** contains many output figures, generated during the analysis process of **cellout.txt** file, including the evolution of the number of primary tumors and metastasis cells (Fig.1 left), hallmarks (Fig.1 right), and probabilities (Fig.2 left). 
+
+|  Files  | Description  |
+|:---|:---|
+| Barplot_N_cells_in_clones_DP.jpg | Barplot for number of cells in each clone for passengers and drivers |
+| Barplot_N_cells_in_clones.jpg |Barplot for number of cells in each clone for drivers only |
+| Hallmarks.jpg | Time evolution of the average hallmark values |
+| Inequality_all_cells.jpg | Dependence of the inequality coefficient on number of all cells |
+| Inequality_metastasis.jpg | Dependence of the inequality coefficient on number of metastasis cells  |
+| Inequality_primary.jpg | Dependence of the inequality coefficient on number of primary tumor cells  |
+| Inequality.jpg | Time evolution of the inequality coefficient |
+| N_cells_in_clones_1.jpg | Time evolution of number of cells in each clone |
+| N_cells_in_clones_2.jpg | Time evolution of number of cells in each clone using different scale|
+| N_cells.jpg | Time evolution of the number of cells|
+| N_clones.jpg | Time evolution of the number of clones|
+| Probabilities.jpg |Time evolution of probabilities|
+| Tree_clones.jpg | Tree of the clones|
+| ggtree_clones.jpg | Tree of the clones using ggtree package |
+| <img width=200/> | <img width=440/> |
+
 
 <img src="tugHall/Figures/N_cells.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/Hallmarks.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.1. Results of simulation: left -** evolution of number of cells, **right -** evolution of hallmarks. Files are *tugHall/Figures/N_cells.jpg*  and *tugHall/Figures/Hallmarks.jpg*.
+**Fig.1. Results of the simulation: left -** evolution of number of cells, **right -** evolution of hallmarks. Files are *tugHall/Figures/N_cells.jpg* and *tugHall/Figures/Hallmarks.jpg*.
 
 
 
 ---
 
 <img src="tugHall/Figures/Probabilities.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/N_clones.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.2. Results of simulation: left -** evolution of probabilities, **right -** evolution of number of clones. Files are *tugHall/Figures/Probabilities.jpg*  and *tugHall/Figures/N_clones.jpg*.
+**Fig.2. Results of the simulation: left -** evolution of probabilities, **right -** evolution of number of clones. Files are *tugHall/Figures/Probabilities.jpg* and *tugHall/Figures/N_clones.jpg*.
 
 
 ---
 
-Fig.2 right shows the evolution of number of clones. Here we have to define clone in simulation is pool of cells with a same set of mutated genes for driver only or for all mutations (driver and passenger genes together). For this propose we define clone ID as bunary number of mutated genes, please, see "cellout.txt" file for columns "Clone.number", "Passengers.Clone.number" and "Mix.Clone.number". Also analysis can calculate the evolution of number of cells in each clone:
+The right side Fig.2 shows the evolution of the number of clones. Here, we have to define the clone in the simulation, which is a pool of cells with a same set of mutated genes either for the driver alone or for all mutations (driver and passenger genes together). For this propose, we define the clone ID as the binary number of mutated genes, please, see **cellout.txt** file for columns "Clone.number", "Passengers.Clone.number" and "Mix.Clone.number". Also, the analysis can calculate the evolution of number of cells in each clone:
 
 
 
 <img src="tugHall/Figures/N_cells_in_clones_1.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/N_cells_in_clones_2.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.3. Results of simulation: left -** evolution of number of cells in clones, **right -** same plot with scale out. Files are *tugHall/Figures/N_cells_in_clones_1.jpg*  and *tugHall/Figures/N_cells_in_clones_2.jpg*.
+**Fig.3. Results of the simulation: left -** evolution of number of cells in clones, **right -** evolution of number of cells in clones, magnified. Files are *tugHall/Figures/N_cells_in_clones_1.jpg*  and *tugHall/Figures/N_cells_in_clones_2.jpg*.
 
 ---
 
-Fig.4 shows number of cells in each clone at last time step to see which clone is dominant and prevails above others:
+Fig.4 shows the number of cells in each clone at the last time step to see which clone is dominant and prevails above the others:
 
 <img src="tugHall/Figures/Barplot_N_cells_in_clones.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/Barplot_N_cells_in_clones_DP.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.4. Results of simulation: left -** barplot for number of cells in clones for driver mutated clone, **right -** same plot for all mutated cells. Files are *tugHall/Figures/Barplot_N_cells_in_clones.jpg*  and *tugHall/Figures/Barplot_N_cells_in_clones_DP.jpg*.
+**Fig.4. Results of the simulation: left -** barplot for number of cells in clones for driver mutated clone, **right -** same plot for all mutated cells. Files are *tugHall/Figures/Barplot_N_cells_in_clones.jpg*  and *tugHall/Figures/Barplot_N_cells_in_clones_DP.jpg*.
 
 ---
 
-During the simulation each cell has "ID of clone", which calculated from binary code of mutated genes. For example, if gene is mutated then its value in binary code equal 1, and if no, it is 0. For example, the cells have only 4 genes in simulation, so "ID of clone" can have binary numbers from 0000 to 1111,  that is related decimal numbers from 0 to 15. Each cell has information about parent ID and time of birthday, so it is possible to calculate cells with same "ID of clone", after that find cell with earlest birthday and get parent ID of it. Using this parent ID to find "ID of clone" for parent, which is related parent of clone. Follow this procedure we find all relations between parent and children for clones and construct the tree for clones (cells) at last time step (Fig.5).
+During the simulation each cell has "clone ID", which is calculated from the binary code of the mutated genes. For example, if a gene is mutated, then its value in binary code is designated as 1, and if not, it is set to 0. For example, the cells have only 4 genes in simulation, and hence, the "clone ID" can have binary numbers from 0000 to 1111, which are the associated decimal numbers from 0 to 15. Each cell has information about the parent ID, and so, time of birthday, so it is possible to calculate cells having the same "clone ID", Subsequently, the cell with the earliest birthday is identified and its parent ID extracted. This parent ID can be used to find the "clone ID" for the parent, which is related to the parent of clone. Using this procedure, we can find all the relations between the parent and children for the clones and construct the tree for the clones (cells) at last time step (Fig.5).
 
 <img src="tugHall/Figures/Tree_clones.jpg" align="middle" width="95%" margin="0 auto" /> 
 
 <img src="tugHall/Figures/ggtree_clones.jpg" align="middle" width="95%" margin="0 auto" /> 
-**Fig.5. Tree of clones at last time step.** The numbers of tree indicate the ID of clones (**upper** is the plot using plotTreeTime function from ape package, **lower** is the plot using ggtree package). Files are *tugHall/Figures/Tree_clones.jpg* and *tugHall/Figures/ggtree_clones.jpg*. 
+**Fig.5. Tree of clones at the last time step.** The numbers of the tree indicate the clone IDs (**upper** is the plot using the plotTreeTime function from the ape package, and **lower** is the plot using the ggtree package). The files are *tugHall/Figures/Tree_clones.jpg* and *tugHall/Figures/ggtree_clones.jpg*. 
 
 
 ---
 
-Figs.6 and 7 show inequality coefficients (for driver mutated cells and for any type mutation) as function of:
+Figs.6 and 7 show the inequality coefficients (for driver mutated cells and for any type mutation) as a function of:
 
 - time step;
 
@@ -191,11 +210,11 @@ Figs.6 and 7 show inequality coefficients (for driver mutated cells and for any 
 
 
 <img src="tugHall/Figures/Inequality.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/Inequality_all_cells.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.6. Results of simulation of inequality coefficient for driver mutated cells and for cells with any type mutations: left -** evolution of inequality coefficient, **right -** inequality coefficient as function of all cells. Files are *tugHall/Figures/Inequality.jpg* and *tugHall/Figures/Inequality_all_cells.jpg*. 
+**Fig.6. Results of simulation of inequality coefficient for driver mutated cells and for cells with any type of mutations: left -** evolution of inequality coefficient, **right -** inequality coefficient as a function of all cells. Files are *tugHall/Figures/Inequality.jpg* and *tugHall/Figures/Inequality_all_cells.jpg*. 
 
 
 <img src="tugHall/Figures/Inequality_primary.jpg" align="middle" width="45%" margin="0 auto" /> <img src="tugHall/Figures/Inequality_metastasis.jpg" align="middle" width="45%" margin="0 auto" />
-**Fig.7. Results of simulation of inequality coefficient for driver mutated cells and for cells with any type mutations: left -** inequality coefficient as function of primary tumor cells, **right -** inequality coefficient as function of metastasis cells. Files are *tugHall/Figures/Inequality_primary.jpg* and *tugHall/Figures/Inequality_metastasis.jpg*.
+**Fig.7. Results of simulation of inequality coefficient for driver mutated cells and for cells with any type of mutations: left -** inequality coefficient as the function of primary tumor cells, **right -** inequality coefficient as the function of metastasis cells. Files are *tugHall/Figures/Inequality_primary.jpg* and *tugHall/Figures/Inequality_metastasis.jpg*.
 
 
 --- 

@@ -30,8 +30,9 @@ The wide availability of recent cancer genomic data requires a coherent model th
 Content of package
 ---
 
-* _User-Guide-tugHall.Rmd_ and _User-Guide-tugHall.html_ are the user guides to install, run, and use tugHall simulator in R Markdown and html formats. 
-* _User-Guide-analysis.Rmd_ and _User-Guide-analysis.html_ are the user guide to analyze the results of a single simulation in R Markdown and html formats.
+* **User-Guide-tugHall.Rmd** and **User-Guide-tugHall.html** are the user guides to install, run, and use tugHall simulator in R Markdown and html formats. 
+* **User-Guide-Analysis.Rmd** and **User-Guide-Analysis.html** are the user guide to analyze the results of a single simulation in R Markdown and html formats.
 * **/tugHall/** is a directory with the program code, input, and output data.
-* **/TESTS/** is a directory with tests, please, see README_TESTS.md file for explanation.
-* **/ABC/** is a directory with a simple example of 10000 trials of simulation and Approximate Bayesian computation. For details, please, see README_ABC.md. 
+* **/TESTS/** is a directory with tests, please, see **README_TESTS.md** file for explanation.
+* **/ABC/** is a directory with a simple example of 10000 trials of simulation and Approximate Bayesian computation. For details, please, see **README_ABC.md**. 
+
