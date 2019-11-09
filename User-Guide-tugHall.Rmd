@@ -356,6 +356,6 @@ or using the line by line procedure in **R Studio**. In this case we have:
   - run the *model()* function to simulate;
   - run **`source("Code/Analysis.R")`** in order to analyze the results and plot the figures in the dialogue box (see **User-Guide-Analysis**).
   
-4. To make a report of the simulation, please, use the **User-Guide-Analysis.RMD**. 
+4. To obtain analytic reports of the simulation, please use the **User-Guide-Analysis.RMD**. 
 In the User-Guide-Analysis.RMD, commands are embeded to include files under Output/ and Figure/. So, after analysis with tugHall, you can generate analysis report automatically from the User-Guide-Analysis.RMD. with knitr or something else. For more details, please, see "Writing reproducible reports in R" on the github (https://nicercode.github.io/guides/reports/). For more details, please, see **User-Guide-Analysis**. 
 
