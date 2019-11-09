@@ -32,6 +32,7 @@ R version **3.3** or later
 libraries: **stringr** 
 
 Note that the program has two different procedures in general: the first is the simulation and the second is the analysis of the simulation results.
+Please, pay attention that the requirements for these procedures are **different**.
 This User-Guide pertains to the **simulation procedure** alone. 
 
 <br />
@@ -355,6 +356,6 @@ or using the line by line procedure in **R Studio**. In this case we have:
   - run the *model()* function to simulate;
   - run **`source("Code/Analysis.R")`** in order to analyze the results and plot the figures in the dialogue box (see **User-Guide-Analysis**).
   
-4. To make a report of the simulation, rename and change the **User-Guide-Analysis.RMD** (for more details, please, see "Writing reproducible reports in R" on the github https://nicercode.github.io/guides/reports/), which uses the output and input files in **/Input/**, **/Output/**, **/Figures/** directories that contain actual information. For more details, please, see **User-Guide-Analysis**. 
-
+4. To make a report of the simulation, please, use the **User-Guide-Analysis.RMD**. 
+In the User-Guide-Analysis.RMD, commands are embeded to include files under Output/ and Figure/. So, after analysis with tugHall, you can generate analysis report automatically from the User-Guide-Analysis.RMD. with knitr or something else. For more details, please, see "Writing reproducible reports in R" on the github (https://nicercode.github.io/guides/reports/). For more details, please, see **User-Guide-Analysis**. 
 

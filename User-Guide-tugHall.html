@@ -40,7 +40,7 @@
 <h2>Requirements for tugHall simulation:</h2>
 <p>R version <strong>3.3</strong> or later</p>
 <p>libraries: <strong>stringr</strong></p>
-<p>Note that the program has two different procedures in general: the first is the simulation and the second is the analysis of the simulation results. This User-Guide pertains to the <strong>simulation procedure</strong> alone.</p>
+<p>Note that the program has two different procedures in general: the first is the simulation and the second is the analysis of the simulation results. Please, pay attention that the requirements for these procedures are <strong>different</strong>. This User-Guide pertains to the <strong>simulation procedure</strong> alone.</p>
 <p><br /></p>
 </div>
 <div id="table-of-contents" class="section level1">
@@ -1039,7 +1039,7 @@
 <li>run <strong><code>source(&quot;Code/Analysis.R&quot;)</code></strong> in order to analyze the results and plot the figures in the dialogue box (see <strong>User-Guide-Analysis</strong>).</li>
 </ul>
 <ol start="4" style="list-style-type: decimal">
-<li>To make a report of the simulation, rename and change the <strong>User-Guide-Analysis.RMD</strong> (for more details, please, see “Writing reproducible reports in R” on the github <a href="https://nicercode.github.io/guides/reports/" class="uri">https://nicercode.github.io/guides/reports/</a>), which uses the output and input files in <strong>/Input/</strong>, <strong>/Output/</strong>, <strong>/Figures/</strong> directories that contain actual information. For more details, please, see <strong>User-Guide-Analysis</strong>.</li>
+<li>To make a report of the simulation, please, use the <strong>User-Guide-Analysis.RMD</strong>. In the User-Guide-Analysis.RMD, commands are embeded to include files under Output/ and Figure/. So, after analysis with tugHall, you can generate analysis report automatically from the User-Guide-Analysis.RMD. with knitr or something else. For more details, please, see “Writing reproducible reports in R” on the github (<a href="https://nicercode.github.io/guides/reports/" class="uri">https://nicercode.github.io/guides/reports/</a>). For more details, please, see <strong>User-Guide-Analysis</strong>.</li>
 </ol>
 </div>
 

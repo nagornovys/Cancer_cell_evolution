@@ -30,7 +30,9 @@ Sys.setenv("TimeZone" = "Japan")
 
 R version **3.6**
 
-libraries: **stringr, ape, ggplot2, ggtree** 
+Libraries: **stringr, ape, ggplot2, ggtree** 
+
+Operation systems: Window, Mac. The code for analysis is not tested under Linux based systems.
 
 Note that the program comprises two different procedures in general: the first is simulation and the second is the analysis of the simulation results. 
 This User-Guide pertains to the **analysis** alone.
