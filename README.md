@@ -21,7 +21,8 @@ All questions and requests can be sent to inagonov@ncc.go.jp
 
 Project source can be downloaded from websites  
 --- 
-https://github.com/nagornovys/Cancer_cell_evolution  -  the developing resource
+https://github.com/tugHall/Cell-based   - the stable version;
+https://github.com/tugHall/Clone-based  -  the developing resource.
 
 Short description
 ---
