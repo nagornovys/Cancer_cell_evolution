@@ -23,7 +23,11 @@ Project source can be downloaded from websites
 --- 
 https://github.com/tugHall/Cell-based   - the stable version;
 
-https://github.com/tugHall/Clone-based  -  the developing resource.
+https://github.com/tugHall/Clone-based  -  the stable version based on clone.
+
+https://github.com/tugHall/CNA  -  the new (developing) version based on clone with copy number alteration in output data.
+
+
 
 Short description
 ---
