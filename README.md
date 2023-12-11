@@ -23,10 +23,20 @@ Project source can be downloaded from websites
 --- 
 https://github.com/tugHall/Cell-based   - the stable version;
 
-https://github.com/tugHall/Clone-based  -  the stable version based on clone.
+https://github.com/tugHall/Clone-based  -  the stable version based on the clone (tugHall 2.0 and 2.1).
 
 https://github.com/tugHall/CNA  -  the new (developing) version based on clone with copy number alteration in output data.
 
+
+Cite this code
+---
+Iurii S Nagornov,  Mamoru Kato. tugHall: a simulator of cancer-cell evolution based on the hallmarks of cancer and tumor-related genes. 
+[Bioinformatics, V.36, N11, June 2020, pp. 3597–3599](https://doi.org/10.1093/bioinformatics/btaa182)
+
+- Clone-based version of tugHall 2.0 and 2.1 with the acceleration of calculation speed
+
+Nagornov, I., Nishino, J., Kato, M. (2020). tugHall: A Tool to Reproduce Darwinian Evolution of Cancer Cells for Simulation-Based Personalized Medicine. In: Mathematical and Computational Oncology. ISMCO 2020. 
+[Lecture Notes in Computer Science, vol 12508. Springer](https://doi.org/10.1007/978-3-030-64511-3_7)
 
 
 Short description
